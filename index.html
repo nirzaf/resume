@@ -171,6 +171,10 @@
             background-color: #555;
         }
 
+        .dark-mode-toggle i {
+            margin-right: 5px;
+        }
+
         /* Mobile Responsiveness */
         @media (max-width: 600px) {
             .resume-container {
@@ -206,7 +210,7 @@
 
 <body>
 
-    <button class="dark-mode-toggle">Toggle Dark Mode</button>
+    <button class="dark-mode-toggle"><i class="fas fa-moon"></i> Toggle Dark Mode</button>
 
     <div class="resume-container">
         <div class="header">
@@ -464,9 +468,11 @@
                 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                     body.classList.add('dark-mode');
                     localStorage.setItem('darkMode', 'true');
+                    toggleButton.innerHTML = '<i class="fas fa-sun"></i> Toggle Light Mode';
                 } else {
                     body.classList.remove('dark-mode');
                     localStorage.setItem('darkMode', 'false');
+                    toggleButton.innerHTML = '<i class="fas fa-moon"></i> Toggle Dark Mode';
                 }
             }
 
@@ -475,6 +481,11 @@
 
             toggleButton.addEventListener('click', () => {
                 body.classList.toggle('dark-mode');
+                if (body.classList.contains('dark-mode')) {
+                    toggleButton.innerHTML = '<i class="fas fa-sun"></i> Toggle Light Mode';
+                } else {
+                    toggleButton.innerHTML = '<i class="fas fa-moon"></i> Toggle Dark Mode';
+                }
                 localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
             });
 
