@@ -88,15 +88,15 @@
         }
 
         /* Experience & Education Entries */
-            .experience .entry,
-            .education .entry,
-            .others .entry {
-                margin-bottom: 20px;
-            }
+        .experience .entry,
+        .education .entry,
+        .others .entry {
+            margin-bottom: 20px;
+        }
 
-            .others .title {
-                font-weight: bold;
-            }
+        .others .title {
+            font-weight: bold;
+        }
 
         .entry .title {
             font-weight: bold;
@@ -109,10 +109,38 @@
 
         .entry-divider {
             border: 0;
-            height: 1px;
-            background-image: linear-gradient(to right, transparent, currentColor, transparent);
+            height: 2px;
+            background-image: linear-gradient(to right, transparent, #ffd700, transparent);
             opacity: 0.3;
             margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dark-mode .entry-divider {
+            background-image: linear-gradient(to right, transparent, #ffd700, transparent);
+            opacity: 0.5;
+        }
+
+        .entry-divider::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
         }
 
         /* Skills Section */
@@ -215,7 +243,6 @@
 </head>
 
 <body>
-
     <button class="dark-mode-toggle"><i class="fas fa-moon"></i></button>
 
     <div class="resume-container">
@@ -268,7 +295,6 @@
                 </ul>
             </div>
         </div>
-
 
         <div class="section experience expandable">
             <h2 class="section-title" aria-expanded="false">Work Experience</h2>
@@ -458,23 +484,25 @@
             <h2 class="section-title" aria-expanded="false">Other Qualifications</h2>
             <div class="collapsible-content">
                 <div class="title">International English Language Testing System (IELTS) (Academic)</div>
-                    <div class="info">
-                        <span class="company">7.5 Average</span>
-                    </div>
-                    
-                    <div class="title">Microsoft Azure Developer Associate (AZ-204)</div>
-                    <div class="info">
-                        <span class="company">Completed an instructor-led training program on developing solutions using Microsoft Azure cloud platform.</span>
-                    </div>
-                    
-                    <div class="title">Udemy - Power Automate</div>
-                    <div class="info">
-                        <span class="company">Completed a course on using Power Automate, a workflow automation tool.</span>
-                    </div>
-                    
-                    <div class="title">Udemy - Power Apps</div>
-                    <div class="info">
-                        <span class="company">Completed a course on using Power Apps, a low-code application development platform.</span>
+                <div class="info">
+                    <span class="company">7.5 Average</span>
+                </div>
+
+                <div class="title">Microsoft Azure Developer Associate (AZ-204)</div>
+                <div class="info">
+                    <span class="company">Completed an instructor-led training program on developing solutions using
+                        Microsoft Azure cloud platform.</span>
+                </div>
+
+                <div class="title">Udemy - Power Automate</div>
+                <div class="info">
+                    <span class="company">Completed a course on using Power Automate, a workflow automation tool.</span>
+                </div>
+
+                <div class="title">Udemy - Power Apps</div>
+                <div class="info">
+                    <span class="company">Completed a course on using Power Apps, a low-code application development
+                        platform.</span>
                 </div>
             </div>
         </div>
@@ -529,6 +557,14 @@
             $(".collapsible-content").hide(); // Initially hide all collapsible content
             $(".section-title").attr('aria-expanded', 'false'); // Set aria-expanded to false
         });
+
+        function animateDividers() {
+            $('.entry-divider').each(function (index) {
+                $(this).css('animation-delay', (index * 0.5) + 's');
+            });
+        }
+
+        animateDividers();
     </script>
 
 </body>
