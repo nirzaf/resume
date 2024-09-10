@@ -13,7 +13,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f8f3f3;
             color: #333;
             line-height: 1.6;
             transition: background-color 0.3s ease, color 0.3s ease;
@@ -87,10 +87,15 @@
         }
 
         /* Experience & Education Entries */
-        .experience .entry,
-        .education .entry {
-            margin-bottom: 20px;
-        }
+            .experience .entry,
+            .education .entry,
+            .others .entry {
+                margin-bottom: 20px;
+            }
+
+            .others .title {
+                font-weight: bold;
+            }
 
         .entry .title {
             font-weight: bold;
@@ -448,7 +453,7 @@
             </div>
         </div>
 
-        <div class="section">
+        <div class="section others">
             <h2 class="section-title" aria-expanded="false">Other Qualifications</h2>
             <div class="collapsible-content">
                 <div class="title">International English Language Testing System (IELTS) (Academic)</div>
