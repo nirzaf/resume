@@ -210,7 +210,7 @@
 
 <body>
 
-    <button class="dark-mode-toggle"><i class="fas fa-moon"></i> Toggle Dark Mode</button>
+    <button class="dark-mode-toggle"><i class="fas fa-moon"></i></button>
 
     <div class="resume-container">
         <div class="header">
@@ -468,11 +468,11 @@
                 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                     body.classList.add('dark-mode');
                     localStorage.setItem('darkMode', 'true');
-                    toggleButton.innerHTML = '<i class="fas fa-sun"></i> Toggle Light Mode';
+                    toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
                 } else {
                     body.classList.remove('dark-mode');
                     localStorage.setItem('darkMode', 'false');
-                    toggleButton.innerHTML = '<i class="fas fa-moon"></i> Toggle Dark Mode';
+                    toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
                 }
             }
 
@@ -482,9 +482,9 @@
             toggleButton.addEventListener('click', () => {
                 body.classList.toggle('dark-mode');
                 if (body.classList.contains('dark-mode')) {
-                    toggleButton.innerHTML = '<i class="fas fa-sun"></i> Toggle Light Mode';
+                    toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
                 } else {
-                    toggleButton.innerHTML = '<i class="fas fa-moon"></i> Toggle Dark Mode';
+                    toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
                 }
                 localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
             });
