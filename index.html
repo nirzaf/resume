@@ -8,249 +8,19 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <style>
-        /* Basic Styling */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f3f3;
-            color: #333;
-            line-height: 1.6;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        h1,
-        h2,
-        h3 {
-            color: #031cff;
-            transition: color 0.3s ease;
-        }
-
-        a {
-            color: #031cff;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        /* Container for Resume Content */
-        .resume-container {
-            max-width: 800px;
-            margin: 30px auto;
-            background: #fff;
-            padding: 30px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease;
-        }
-
-        /* Header Section */
-        .header {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .header img {
-            width: 150px;
-            height: 150px;
-            border-radius: 40%;
-            object-fit: cover;
-            margin-bottom: 5px;
-        }
-
-        .header h3 {
-            font-weight: normal;
-            margin-bottom: 5px;
-            margin-top: 0;
-        }
-
-        /* Section Titles */
-        .section-title {
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            cursor: pointer;
-            transition: border-bottom-color 0.3s ease;
-        }
-
-        .section-title:hover {
-            border-bottom-color: #337ab7;
-        }
-
-        /* Experience & Education Entries */
-        .experience .entry,
-        .education .entry,
-        .others .entry {
-            margin-bottom: 20px;
-        }
-
-        .others .title {
-            font-weight: bold;
-        }
-
-        .entry .title {
-            font-weight: bold;
-        }
-
-        .entry .date {
-            font-style: italic;
-            color: #777;
-        }
-
-        .entry-divider {
-            border: 0;
-            height: 2px;
-            background-image: linear-gradient(to right, transparent, #ffd700, transparent);
-            opacity: 0.3;
-            margin: 20px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .dark-mode .entry-divider {
-            background-image: linear-gradient(to right, transparent, #ffd700, transparent);
-            opacity: 0.5;
-        }
-
-        .entry-divider::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8), transparent);
-            animation: shine 3s infinite;
-        }
-
-        @keyframes shine {
-            0% {
-                left: -100%;
-            }
-
-            100% {
-                left: 100%;
-            }
-        }
-
-        /* Skills Section */
-        .skills ul {
-            display: flex;
-            flex-wrap: wrap;
-            margin: -5px;
-        }
-
-        .skills li {
-            padding: 5px;
-            margin: 5px;
-            background-color: #eee;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        /* Contact Icons */
-        .contact-icons li {
-            display: inline-block;
-            margin-right: 10px;
-        }
-
-        .contact-icons i {
-            font-size: 1.2em;
-            margin-right: 5px;
-        }
-
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #181818;
-            color: #eee;
-        }
-
-        .dark-mode .resume-container {
-            background: #252525;
-        }
-
-        .dark-mode .section-title {
-            border-bottom-color: #555;
-        }
-
-        .dark-mode .skills li {
-            background-color: #333;
-        }
-
-        /* Dark Mode Toggle Button */
-        .dark-mode-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .dark-mode-toggle:hover {
-            background-color: #555;
-        }
-
-        .dark-mode-toggle i {
-            margin-right: 5px;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 600px) {
-            .resume-container {
-                padding: 20px;
-            }
-
-            .skills ul {
-                flex-direction: column;
-            }
-
-            .skills li {
-                margin: 5px 0;
-            }
-
-            .contact-icons li {
-                display: block;
-            }
-        }
-
-
-        /* Animation for Expanding/Collapsing Content */
-        .collapsible-content {
-            overflow: hidden;
-            /* Remove max-height: 0 and transition here */
-        }
-
-        .section-title[aria-expanded="false"]::after {
-            content: " +";
-            float: right;
-        }
-
-        .section-title[aria-expanded="true"]::after {
-            content: " -";
-            float: right;
-        }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="resume.css">
 </head>
 
 <body>
     <button class="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+    <button class="expand-all-btn" id="expandAllBtn"><i class="fas fa-chevron-down"></i></button>
+    <button class="download-btn" id="downloadPdf"><i class="fas fa-download"></i></button>
 
-    <div class="resume-container">
+    <div class="resume-container" id="resume">
         <div class="header">
             <img src="https://ik.imagekit.io/fazrinphcc/myprofilepic%20-%20crpped.jpg?updatedAt=1725949317901"
-                alt="Profile Picture">
+                alt="Profile Picture" class="profile-image" id="profile-img">
             <h1>M.F.M Fazrin</h1>
             <h2>MSc in Software Engineering</h2>
             <ul class="contact-icons">
@@ -513,7 +283,7 @@
 
     <script>
         $(document).ready(function () {
-            // Dark Mode Toggle 
+            // Dark Mode Toggle
             const toggleButton = document.querySelector('.dark-mode-toggle');
             const body = document.body;
 
@@ -542,7 +312,6 @@
                 localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
             });
 
-
             // Collapsible Sections
             $(".section-title").click(function () {
                 const $content = $(this).next(".collapsible-content");
@@ -557,8 +326,95 @@
                 $(this).attr('aria-expanded', !isExpanded);
             });
 
-            $(".collapsible-content").hide(); // Initially hide all collapsible content
-            $(".section-title").attr('aria-expanded', 'false'); // Set aria-expanded to false
+            $(".collapsible-content").hide();
+            $(".section-title").attr('aria-expanded', 'false');
+
+            // Expand All Button Functionality 
+            $("#expandAllBtn").click(function () {
+                const $icon = $(this).find('i');
+                const isExpanded = $icon.hasClass('fa-chevron-up');
+
+                if (isExpanded) {
+                    $(".collapsible-content").slideUp(300);
+                    $(".section-title").attr('aria-expanded', 'false');
+                    $icon.removeClass('fa-chevron-up').addClass('fa-chevron-down');
+                } else {
+                    $(".collapsible-content").slideDown(300);
+                    $(".section-title").attr('aria-expanded', 'true');
+                    $icon.removeClass('fa-chevron-down').addClass('fa-chevron-up');
+                }
+            });
+
+            function generateCleanContent() {
+                const container = document.createElement('div');
+                container.classList.add('pdf-content-wrapper');
+
+                container.style.fontSize = '12pt';
+                container.style.lineHeight = '1.5';
+                container.style.fontFamily = 'Arial, sans-serif';
+                container.style.color = '#333';
+
+                const sections = document.querySelectorAll('.section');
+                sections.forEach(section => {
+                    const title = section.querySelector('.section-title').textContent;
+                    const content = section.querySelector('.collapsible-content').innerHTML;
+
+                    const sectionDiv = document.createElement('div');
+                    sectionDiv.style.marginBottom = '20px';
+
+                    const titleElement = document.createElement('h2');
+                    titleElement.textContent = title;
+                    titleElement.style.fontSize = '16pt';
+                    titleElement.style.fontWeight = 'bold';
+                    titleElement.style.marginBottom = '10px';
+                    titleElement.style.color = '#0066cc';
+
+                    sectionDiv.appendChild(titleElement);
+
+                    const contentWrapper = document.createElement('div');
+                    contentWrapper.innerHTML = content;
+
+                    // Style specific elements within the content
+                    contentWrapper.querySelectorAll('ul').forEach(ul => {
+                        ul.style.paddingLeft = '20px';
+                        ul.style.marginTop = '5px';
+                        ul.style.marginBottom = '5px';
+                    });
+
+                    contentWrapper.querySelectorAll('li').forEach(li => {
+                        li.style.marginBottom = '5px';
+                    });
+
+                    contentWrapper.querySelectorAll('strong').forEach(strong => {
+                        strong.style.fontWeight = 'bold';
+                    });
+
+                    sectionDiv.appendChild(contentWrapper);
+                    container.appendChild(sectionDiv);
+                });
+
+                return container;
+            }
+
+            // PDF Download Functionality
+            document.querySelector('.download-btn').addEventListener('click', function () {
+                const profileImage = document.getElementById('profile-img');
+                profileImage.style.display = 'none';
+
+                const cleanContent = generateCleanContent();
+                const opt = {
+                    margin: [10, 15, 10, 10],
+                    filename: 'mfm_fazrin_resume.pdf',
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+                    html2canvas: { scale: 2 },
+                    pagebreak: { mode: 'avoid-all' },
+                    backgroundColor: '#ffffff'
+                };
+
+                html2pdf().set(opt).from(cleanContent).save().then(() => {
+                    profileImage.style.display = '';
+                });
+            });
         });
 
         function animateDividers() {
