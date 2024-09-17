@@ -17,10 +17,8 @@ p {
 h1,
 h2,
 h3 {
-    letter-spacing: 0.15em;
-    color: #0221d4;
-    font-weight: bold;
-    text-shadow: 0 0 3px #0287d4;
+    color: #0066cc;
+    text-shadow: 2px 2px 4px #66ccff;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
@@ -154,11 +152,8 @@ body.dark-mode {
 .dark-mode h1,
 .dark-mode h2,
 .dark-mode h3 {
-    letter-spacing: 0.15em;
-    color: #0221d4;
-    font-weight: bold;
-    text-shadow: 
-        0 0 3px #0287d4
+    color: #3399ff;
+    text-shadow: 2px 2px 4px #0066cc;
 }
 
 /* Dark Mode Toggle Button */
