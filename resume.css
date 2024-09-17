@@ -170,10 +170,7 @@ body.dark-mode {
 }
 /* Mobile Responsiveness */
 @media (max-width: 600px) {
-    body {
-        margin-left: 10px;
-    }
-
+    
     .resume-container {
         padding: 20px;
     }
@@ -184,6 +181,22 @@ body.dark-mode {
 
     .skills li {
         margin: 5px 0;
+    }
+
+    /* New styles for contact icons */
+    .contact-icons {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-icons li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .contact-icons li:last-child {
+        margin-bottom: 0;
     }
 }
 
