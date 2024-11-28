@@ -100,10 +100,11 @@ function App() {
   }, [darkMode])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center p-4">
+    <div className="min-h-screen w-full bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+      {/* Dark Mode Toggle */}
       <button
         onClick={() => setDarkMode(!darkMode)}
-        className="fixed top-4 right-4 p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+        className="fixed top-6 right-6 p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg text-gray-800 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 z-50"
         aria-label="Toggle dark mode"
       >
         {darkMode ? (
@@ -113,14 +114,31 @@ function App() {
         )}
       </button>
 
-      <div className="max-w-3xl w-full bg-gray-900 rounded-lg shadow-xl overflow-hidden">
-        <div className="w-full mx-auto px-8 py-12 space-y-8">
-          <Header {...resumeData.header} />
-          <Summary text={resumeData.summary} />
-          <TopSkills skills={resumeData.topSkills} />
-          <WorkExperience experiences={resumeData.workExperience} />
-          <Education education={resumeData.education} />
-          <OtherQualifications qualifications={resumeData.otherQualifications} />
+      {/* Main Container */}
+      <div className="w-full min-h-screen flex items-center justify-center p-4">
+        <div className="w-full max-w-[90%] 2xl:max-w-[80%] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden">
+          <div className="relative w-full">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 dark:from-blue-500/5 dark:to-purple-500/5" />
+            
+            {/* Content */}
+            <div className="relative w-full px-6 md:px-12 lg:px-16 py-12 space-y-10">
+              <Header {...resumeData.header} />
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div className="space-y-8">
+                  <Summary text={resumeData.summary} />
+                  <TopSkills skills={resumeData.topSkills} />
+                  <Education education={resumeData.education} />
+                </div>
+                
+                <div className="space-y-8">
+                  <WorkExperience experiences={resumeData.workExperience} />
+                  <OtherQualifications qualifications={resumeData.otherQualifications} />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
