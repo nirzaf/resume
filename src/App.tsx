@@ -1,148 +1,189 @@
-import { useState, useEffect } from 'react'
-import Header from './components/Header'
-import Summary from './components/Summary'
-import TopSkills from './components/TopSkills'
-import WorkExperience from './components/WorkExperience'
-import Education from './components/Education'
-import OtherQualifications from './components/OtherQualifications'
+import Header from './components/Header';
+import Summary from './components/Summary';
+import TopSkills from './components/TopSkills';
+import Experience from './components/Experience';
+import Education from './components/Education';
+import OtherQualifications from './components/OtherQualifications';
 
 const resumeData = {
   header: {
-    name: "M.F.M Fazrin",
+    name: "Mohamed Farook Mohamed Fazrin",
     title: "MSc in Software Engineering",
     location: "Al Sadd, Doha, Qatar",
-    phone: "+974 12345678",
-    email: "mfmfazrin@gmail.com",
+    phone: "+97433253203",
+    mobile: "+94772049123",
+    email: "mfmfazrin1986@gmail.com",
     links: {
       github: "github.com/nirzaf",
       linkedin: "linkedin.com/in/mfmfazrin",
-      portfolio: "Portfolio"
+      portfolio: "nirzaf.github.io"
     }
   },
   summary: `As a Senior Software Development Specialist at the Primary Health Care Corporation in Qatar, I develop robust, high-concurrency web applications with a strong focus on delivering a seamless and positive end-user experience.
 
-With over a decade of software development experience, I have a proven track record of delivering high-quality solutions across diverse industries. My technical proficiency spans a wide range of technologies, and I am adept at quickly learning and adapting to new challenges.
+With over a decade of experience in software engineering, I have a proven track record of delivering high-quality solutions across diverse industries. My technical proficiency spans a wide range of technologies, and I am adept at quickly learning and adapting to new challenges.
 
 I am seeking a challenging role where I can leverage my expertise and passion for innovation to contribute to the development of impactful software.`,
-  
   topSkills: [
-    "C#/.NET Core", "ASP.NET Core", "Angular", "Azure Cloud Services", 
-    "SQL Server", "Microservices", "REST API", "Agile Methodologies", 
+    "C#/.NET Core",
+    "ASP.NET Core",
+    "Angular",
+    "Azure Cloud Services",
+    "SQL Server",
+    "Microservices",
+    "REST API",
+    "Agile Methodologies",
     "Leadership & Mentoring"
   ],
-  
-  workExperience: [
+  experiences: [
     {
+      title: "Software Development Specialist",
       company: "Primary Health Care Corporation (Qatar)",
-      position: "Software Development Specialist",
-      startDate: "July 2022",
-      endDate: "Present",
-      description: [
-        "Led the development of backend services for the Nar'aakom Mobile Application",
-        "Integrated Azure Active Directory for secure authentication",
-        "Optimized database query performance and implemented caching strategies",
-        "Migrated legacy data to FHIR (Fast Healthcare Interoperability Resources) database",
-        "Developed Open API system for third-party service integration"
+      duration: "July 2022 - Present",
+      location: "Doha, Qatar",
+      project: "Nar'aakom Mobile Application (Backend Services)",
+      responsibilities: [
+        "Migrated REST APIs to GraphQL, integrated Azure Active Directory for authentication",
+        "Optimized query performance with Azure Redis caching",
+        "Migrated data from SQL Server to a FHIR database",
+        "Developed an Open API system to allow third-party service integrations"
       ],
-      technologies: ["C#", ".NET Core", "Azure", "SQL Server", "FHIR", "REST API"]
+      technologies: ["GraphQL", "Azure AD", "Redis", "FHIR", "SQL Server"]
+    },
+    {
+      title: "Senior Full-stack Engineer",
+      company: "Quadrate Tech Solutions Private Limited",
+      duration: "July 2020 - June 2022",
+      location: "Colombo, Sri Lanka",
+      project: "Hotel ERP (SaaS-based ERP Solution for hotels)",
+      responsibilities: [
+        "Developed and maintained the administration module, handling user authentication, authorization, and configuration of modules",
+        "Deployed a mail service and SMS gateway using Azure Functions and Logic Apps",
+        "Increased system scalability by synchronizing legacy data from SQL Server to Cosmos Database",
+        "Developed user interfaces using Angular and integrated microservices",
+        "Implemented CI/CD pipelines using Azure DevOps"
+      ],
+      technologies: ["Angular", "Azure Functions", "Cosmos DB", "Service Bus", "RabbitMQ", "SQL Server 2022", "Azure DevOps"]
+    },
+    {
+      title: "Dot NET Engineer",
+      company: "Voigue Private Limited",
+      duration: "Nov 2019 - June 2020",
+      location: "Colombo, Sri Lanka",
+      project: "SmartPABX - Cloud-Based Phone System",
+      responsibilities: [
+        "Developed Backend API with .NET Core",
+        "Updated the existing PABX legacy system to the latest version",
+        "User interface optimized by converting WinForms to WPF",
+        "Enabled Dynamic User interface functions"
+      ],
+      technologies: [".NET Core 2.1", "AsterNET", "WPF", "C#", "REST API", "XAML", "PABX Asterisk", "MariaDB"]
+    },
+    {
+      title: "Associate Full Stack-Engineer",
+      company: "Virtusa Private Limited",
+      duration: "Jan 2019 - October 2019",
+      location: "Colombo, Sri Lanka",
+      project: "McDonald's - Workforce Operations Labor Forecasting System",
+      responsibilities: [
+        "Developed a web application to forecast labour requirements based on sales data",
+        "Implementation of new features, optimizations, bug prioritizing and fixing",
+        "Maintained 10/10 client scorecards from project inception till production"
+      ],
+      technologies: ["Angular 6", "Bootstrap 4.2", ".NET Core 2.0", "Web API", "EF Core 2.0", "AutoMapper", "SQL Server 2017", "Azure Web Jobs"]
+    },
+    {
+      title: "Software Developer",
+      company: "Nemico Holdings",
+      duration: "Jan 2016 - Dec 2018",
+      location: "Colombo, Sri Lanka",
+      project: "Inventory Management System for fashion retailers",
+      responsibilities: [
+        "POS integration for inventory database updates",
+        "Implemented cloud-based enterprise inventory management in ASP.NET (4.8)",
+        "Migrated reporting system from Crystal Reports to iTextSharp"
+      ],
+      technologies: ["C#.NET", "ASP.NET 4.8", "SQL Server 2012", "Crystal Reports", "iTextSharp"]
+    },
+    {
+      title: "Backend Developer",
+      company: "Olayan (Saudi Arabia)",
+      duration: "June 2012 - July 2015",
+      location: "Riyadh, Saudi Arabia",
+      responsibilities: [
+        "Centralized online order-taking process",
+        "Improved UX with real-time notification using SignalR",
+        "Introduced PDF.js replacing Box View"
+      ],
+      technologies: [".NET Framework 4.0", "SignalR", "ASP.NET Web API", "SQL Server 2008 R2", "PDF.js"]
+    },
+    {
+      title: "Junior Developer",
+      company: "QTS Private Limited",
+      duration: "Aug 2009 - April 2012",
+      location: "Colombo, Sri Lanka",
+      project: "LECO Energy - Field Report Writer/Total Maintenance Service",
+      responsibilities: [
+        "Developed application for field service engineers",
+        "Reverse-engineered Office Info Path 2003",
+        "Developed add-ons while maintaining performance",
+        "Optimized team efficiency in feature implementations"
+      ],
+      technologies: ["C#", ".NET Framework", "InfoPath", "SQL Server"]
     }
   ],
-  
   education: [
     {
-      institution: "Cardiff Metropolitan University",
       degree: "MSc in Software Engineering",
-      startDate: "2019",
-      endDate: "2021",
-      duration: "2019 - 2021",
-      location: "Cardiff, Wales, UK",
-      description: "Focused on advanced software architecture, cloud computing, and agile methodologies"
+      institution: "Kingston University",
+      location: "London, UK",
+      duration: "2019 - 2021"
+    },
+    {
+      degree: "BE in Software Engineering",
+      institution: "London Metropolitan University",
+      location: "London, UK",
+      duration: "2015 - 2019"
     }
   ],
-  
-  otherQualifications: [
+  qualifications: [
     {
-      title: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
-      date: "2023",
-      description: "Professional certification demonstrating expertise in designing distributed systems on AWS"
-    },
-    {
-      title: "Microsoft Certified: Azure Developer Associate",
-      issuer: "Microsoft",
-      date: "2022",
-      description: "Certification validating expertise in cloud development and Azure services"
-    },
-    {
-      title: "IELTS Academic",
+      title: "IELTS (Academic)",
       issuer: "British Council",
-      date: "2022",
-      description: "Overall Band Score: 7.5"
+      score: "7.5 Average",
+      date: "2022"
+    },
+    {
+      title: "Microsoft Azure Developer Associate (AZ-204)",
+      issuer: "Microsoft",
+      date: "2022"
+    },
+    {
+      title: "Power Automate",
+      issuer: "Udemy",
+      date: "2023"
+    },
+    {
+      title: "Power Apps",
+      issuer: "Udemy",
+      date: "2023"
     }
   ]
-}
+};
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false)
-
-  useEffect(() => {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setDarkMode(true)
-    }
-  }, [])
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
-
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
-      {/* Dark Mode Toggle */}
-      <button
-        onClick={() => setDarkMode(!darkMode)}
-        className="fixed top-6 right-6 p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg text-gray-800 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 z-50"
-        aria-label="Toggle dark mode"
-      >
-        {darkMode ? (
-          <i className="fas fa-sun text-xl" />
-        ) : (
-          <i className="fas fa-moon text-xl" />
-        )}
-      </button>
-
-      {/* Main Container */}
-      <div className="w-full min-h-screen flex items-center justify-center p-4">
-        <div className="w-full max-w-[90%] 2xl:max-w-[80%] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden">
-          <div className="relative w-full">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 dark:from-blue-500/5 dark:to-purple-500/5" />
-            
-            {/* Content */}
-            <div className="relative w-full px-6 md:px-12 lg:px-16 py-12 space-y-10">
-              <Header {...resumeData.header} />
-              
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                <div className="space-y-8">
-                  <Summary text={resumeData.summary} />
-                  <TopSkills skills={resumeData.topSkills} />
-                  <Education education={resumeData.education} />
-                </div>
-                
-                <div className="space-y-8">
-                  <WorkExperience experiences={resumeData.workExperience} />
-                  <OtherQualifications qualifications={resumeData.otherQualifications} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div className="min-h-screen bg-gray-50 dark:bg-dark">
+      <div className="content-wrapper py-8 space-y-8">
+        <Header {...resumeData.header} />
+        <Summary text={resumeData.summary} />
+        <TopSkills skills={resumeData.topSkills} />
+        <Experience experiences={resumeData.experiences} />
+        <Education education={resumeData.education} />
+        <OtherQualifications qualifications={resumeData.qualifications} />
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
