@@ -23,6 +23,7 @@ const resumeData = {
 
 My core expertise encompasses full-stack development, cloud architecture, and agile methodologies, with particular strength in designing distributed systems and microservices. I excel in implementing real-time applications while maintaining clean code practices and mentoring development teams. Passionate about innovation, I bring a strategic approach to solving complex technical challenges and am seeking opportunities to drive transformative projects in a dynamic environment.`,
   topSkills: [
+    "React",
     "C#/.NET Core",
     "ASP.NET Core",
     "Angular",
