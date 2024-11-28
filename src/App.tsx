@@ -19,11 +19,9 @@ const resumeData = {
       portfolio: "nirzaf.github.io"
     }
   },
-  summary: `As a Senior Software Development Specialist at the Primary Health Care Corporation in Qatar, I develop robust, high-concurrency web applications with a strong focus on delivering a seamless and positive end-user experience.
+  summary: `As a Senior Software Development Specialist at the Primary Health Care Corporation in Qatar, I architect and develop robust, high-concurrency web applications focusing on exceptional user experiences. With over a decade of experience in software engineering, I have consistently delivered innovative solutions across diverse industries, specializing in scalable architectures and performance optimization. My proven track record demonstrates expertise in building enterprise-grade applications that drive business success and technological advancement.
 
-With over a decade of experience in software engineering, I have a proven track record of delivering high-quality solutions across diverse industries. My technical proficiency spans a wide range of technologies, and I am adept at quickly learning and adapting to new challenges.
-
-I am seeking a challenging role where I can leverage my expertise and passion for innovation to contribute to the development of impactful software.`,
+My core expertise encompasses full-stack development, cloud architecture, and agile methodologies, with particular strength in designing distributed systems and microservices. I excel in implementing real-time applications while maintaining clean code practices and mentoring development teams. Passionate about innovation, I bring a strategic approach to solving complex technical challenges and am seeking opportunities to drive transformative projects in a dynamic environment.`,
   topSkills: [
     "C#/.NET Core",
     "ASP.NET Core",

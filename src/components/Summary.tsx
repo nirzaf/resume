@@ -41,7 +41,7 @@ const Summary: FC<SummaryProps> = ({ text }) => {
                     {getSectionTitle(index)}
                   </h3>
                   <div className="prose prose-sm dark:prose-invert">
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
                       {section}
                     </p>
                   </div>
