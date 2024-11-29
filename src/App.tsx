@@ -7,15 +7,14 @@ import OtherQualifications from './components/OtherQualifications';
 
 const resumeData = {
   header: {
-    name: "Mohamed Farook Mohamed Fazrin",
-    title: "MSc in Software Engineering",
-    location: "Al Sadd, Doha, Qatar",
-    phone: "+97433253203",
-    mobile: "+94772049123",
-    email: "mfmfazrin1986@gmail.com",
-    links: {
-      github: "github.com/nirzaf",
-      linkedin: "linkedin.com/in/mfmfazrin",
+    name: "Mohamed Fazrin",
+    title: "Senior Software Development Specialist",
+    contact: {
+      email: "nirzaf@gmail.com",
+      phone: "+974 7044 8284",
+      location: "Doha, Qatar",
+      linkedin: "https://www.linkedin.com/in/mohamed-fazrin",
+      github: "https://github.com/nirzaf",
       portfolio: "nirzaf.github.io"
     }
   },
