@@ -1,3 +1,4 @@
+// Helper function to get appropriate icon based on degree
 export const getEducationIcon = (degree: string): string => {
   const degreeType = degree.toLowerCase();
   if (degreeType.includes('master')) return 'fa-user-graduate';

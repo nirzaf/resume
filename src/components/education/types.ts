@@ -18,3 +18,11 @@ export interface EducationProps {
 export interface EducationCardProps extends EducationItem {
   index: number;
 }
+
+export interface SectionTitleProps {
+  title: string;
+}
+
+export interface EducationGridProps {
+  education: EducationItem[];
+}
