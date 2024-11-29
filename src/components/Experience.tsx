@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import { ExperienceProps } from '../types/experience';
+import { ExperienceProps, WorkExperience } from '../types/experience';
 import ExperienceCard from './experience/ExperienceCard';
 
 const Experience: FC<ExperienceProps> = ({ experiences }) => {
