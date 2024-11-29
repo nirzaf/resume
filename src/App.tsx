@@ -1,22 +1,24 @@
+import { useState } from 'react';
 import Header from './components/Header';
 import Summary from './components/Summary';
 import TopSkills from './components/TopSkills';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import OtherQualifications from './components/OtherQualifications';
+import profileImage from './assets/profile.jpg';
 
-const resumeData = {
+export const resumeData = {
   header: {
     name: "Mohamed Fazrin",
     title: "Senior Software Development Specialist",
-    profileImage: "https://ik.imagekit.io/fazrinphcc/myprofilepic%20-%20crpped.jpg?updatedAt=1725949317901",
+    profileImage: profileImage,
     contact: {
-      email: "nirzaf@gmail.com",
-      phone: "+974 7044 8284",
-      location: "Doha, Qatar",
-      linkedin: "https://www.linkedin.com/in/mohamed-fazrin",
-      github: "https://github.com/nirzaf",
-      portfolio: "nirzaf.github.io"
+      email: "mfmfazrin1986@gmail.com",
+      mobile: "+94772049123",
+      location: "Colombo, Sri Lanka",
+      linkedin: "https://www.linkedin.com/in/mohamed-fazrin/",
+      github: "https://github.com/fazrinmohamed",
+      portfolio: "https://fazrinmohamed.github.io"
     }
   },
   summary: {
