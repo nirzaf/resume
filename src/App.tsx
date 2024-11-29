@@ -1,0 +1,269 @@
+import Header from './components/Header';
+import Summary from './components/Summary';
+import TopSkills from './components/TopSkills';
+import Experience from './components/Experience';
+import Education from './components/Education';
+import OtherQualifications from './components/OtherQualifications';
+import profileImage from './assets/profile.JPG';
+
+export const resumeData = {
+  header: {
+    name: "Mohamed Fazrin",
+    title: "Senior Software Development Specialist",
+    profileImage: profileImage,
+    contact: {
+      email: "mfmfazrin1986@gmail.com",
+      mobile: "+94772049123",
+      location: "Colombo, Sri Lanka",
+      linkedin: "https://linkedin.com/in/mfmfazrin",
+      github: "https://github.com/nirzaf",
+      portfolio: "https://nirzaf.github.io"
+    }
+  },
+  summary: {
+    professionalOverview: {
+      text: "As a Senior Software Development Specialist at Primary Health Care Corporation, I architect and develop robust, high-concurrency web applications focusing on exceptional user experiences. With extensive experience in software engineering, I have consistently delivered innovative solutions across diverse industries, specializing in scalable architectures and performance optimization.",
+      highlights: [
+        {
+          icon: "fa-rocket",
+          text: "Led development of enterprise-scale healthcare systems"
+        },
+        {
+          icon: "fa-layer-group",
+          text: "Specialized in scalable architectures and microservices"
+        },
+        {
+          icon: "fa-chart-line",
+          text: "Proven track record of performance optimization"
+        }
+      ]
+    },
+    coreExpertise: {
+      text: "My expertise encompasses full-stack development, cloud architecture, and agile methodologies, with particular strength in designing distributed systems and microservices. I excel in implementing real-time applications while maintaining clean code practices, leading development teams, and driving technological innovation through strategic solutions.",
+      highlights: [
+        {
+          icon: "fa-code",
+          text: "Full-stack development with modern technologies"
+        },
+        {
+          icon: "fa-cloud",
+          text: "Cloud architecture and distributed systems"
+        },
+        {
+          icon: "fa-users-gear",
+          text: "Team leadership and agile methodologies"
+        }
+      ]
+    }
+  },
+  topSkills: [
+    "React",
+    "C#/.NET Core",
+    "ASP.NET Core",
+    "Angular",
+    "Azure Cloud Services",
+    "SQL Server",
+    "Microservices",
+    "REST API",
+    "Agile Methodologies",
+    "Leadership & Mentoring"
+  ],
+  experiences: [
+    {
+      title: "Senior Software Development Specialist",
+      company: "Primary Health Care Corporation",
+      location: "Qatar",
+      duration: "2021 - Present",
+      description: "Lead developer for enterprise-scale healthcare management systems, focusing on high-performance web applications and distributed systems architecture.",
+      teamSize: 8,
+      projectCount: 5,
+      responsibilities: [
+        "Architect and implement scalable microservices using .NET Core and React",
+        "Lead development of real-time patient monitoring dashboard",
+        "Mentor junior developers and conduct code reviews",
+        "Design and implement CI/CD pipelines for automated deployment"
+      ],
+      achievements: [
+        "Reduced system response time by 40% through optimization",
+        "Successfully migrated legacy systems to modern architecture",
+        "Implemented automated testing reducing bugs by 60%"
+      ],
+      technologies: [
+        "C#/.NET Core",
+        "React",
+        "Azure",
+        "Docker",
+        "Kubernetes",
+        "MongoDB"
+      ]
+    },
+    {
+      title: "Full Stack Developer",
+      company: "Microsoft Innovation Center",
+      location: "Sri Lanka",
+      duration: "2019 - 2021",
+      description: "Developed innovative solutions for enterprise clients, specializing in cloud-native applications and modern web technologies.",
+      teamSize: 6,
+      projectCount: 4,
+      responsibilities: [
+        "Developed cloud-native applications using Azure services",
+        "Implemented secure authentication and authorization systems",
+        "Created responsive UI components using React and TypeScript",
+        "Established coding standards and best practices"
+      ],
+      achievements: [
+        "Awarded 'Best Innovation' for AI-powered analytics dashboard",
+        "Reduced deployment time by 70% with automated pipelines",
+        "Mentored 4 junior developers to full-stack proficiency"
+      ],
+      technologies: [
+        "TypeScript",
+        "React",
+        "Node.js",
+        "Azure",
+        "GraphQL",
+        "PostgreSQL"
+      ]
+    },
+    {
+      title: "Software Engineer",
+      company: "Virtusa",
+      location: "Sri Lanka",
+      duration: "2017 - 2019",
+      description: "Specialized in building enterprise-level applications for financial services clients, focusing on security and scalability.",
+      teamSize: 5,
+      projectCount: 3,
+      responsibilities: [
+        "Developed secure financial transaction processing systems",
+        "Implemented real-time data synchronization solutions",
+        "Created automated testing frameworks for quality assurance",
+        "Collaborated with global teams across time zones"
+      ],
+      achievements: [
+        "Achieved 99.99% uptime for critical financial systems",
+        "Reduced transaction processing time by 35%",
+        "Implemented fraud detection system saving $2M annually"
+      ],
+      technologies: [
+        "Java",
+        "Spring Boot",
+        "Angular",
+        "Oracle",
+        "RabbitMQ",
+        "Jenkins"
+      ]
+    },
+    {
+      title: "Junior Developer",
+      company: "WSO2",
+      location: "Sri Lanka",
+      duration: "2015 - 2017",
+      description: "Contributed to open-source middleware solutions, focusing on API management and enterprise integration patterns.",
+      teamSize: 4,
+      projectCount: 3,
+      responsibilities: [
+        "Developed features for API management platform",
+        "Created integration solutions for enterprise clients",
+        "Contributed to open-source middleware projects",
+        "Participated in agile development processes"
+      ],
+      achievements: [
+        "Published 3 technical articles on system integration",
+        "Contributed to 5 major open-source releases",
+        "Developed popular community extensions"
+      ],
+      technologies: [
+        "Java",
+        "OSGi",
+        "JavaScript",
+        "MySQL",
+        "Apache Synapse",
+        "Maven"
+      ]
+    }
+  ],
+  education: [
+    {
+      degree: "Master of Computer Science",
+      institution: "University of Colombo School of Computing",
+      location: "Colombo, Sri Lanka",
+      duration: "2019 - 2021",
+      description: "Specialized in Advanced Software Engineering and Distributed Systems. Conducted research on cloud-native architectures and microservices scalability patterns.",
+      gpa: "3.8/4.0",
+      major: "Software Engineering",
+      achievements: [
+        "Published research paper on 'Scalable Microservices Architecture Patterns' in IEEE Conference",
+        "Led a team of 5 in developing a cloud-native healthcare management system",
+        "Received Outstanding Graduate Student Award"
+      ],
+      honors: [
+        "Dean's List - All Semesters",
+        "Merit Scholarship Recipient",
+        "Best Research Project Award"
+      ]
+    },
+    {
+      degree: "Bachelor of Science in Computer Science",
+      institution: "University of Colombo",
+      location: "Colombo, Sri Lanka",
+      duration: "2015 - 2019",
+      description: "Comprehensive study of computer science fundamentals with focus on software development and system architecture. Participated in multiple hackathons and coding competitions.",
+      gpa: "3.7/4.0",
+      major: "Computer Science",
+      minor: "Mathematics",
+      achievements: [
+        "Developed an AI-powered attendance tracking system for the university",
+        "Captain of the university programming team",
+        "Completed internship at Microsoft Innovation Center"
+      ],
+      honors: [
+        "First Class Honours",
+        "Programming Competition Winner 2018",
+        "University Innovation Grant Recipient"
+      ]
+    }
+  ],
+  qualifications: [
+    {
+      title: "IELTS (Academic)",
+      issuer: "British Council",
+      score: "7.5 Average",
+      date: "2022"
+    },
+    {
+      title: "Microsoft Azure Developer Associate (AZ-204)",
+      issuer: "Microsoft",
+      date: "2022"
+    },
+    {
+      title: "Power Automate",
+      issuer: "Udemy",
+      date: "2023"
+    },
+    {
+      title: "Power Apps",
+      issuer: "Udemy",
+      date: "2023"
+    }
+  ]
+};
+
+function App() {
+  return (
+    <div className="min-h-screen bg-gray-50 dark:bg-dark">
+      <div className="content-wrapper py-8 space-y-8">
+        <Header {...resumeData.header} />
+        <Summary 
+          professionalOverview={resumeData.summary.professionalOverview}
+          coreExpertise={resumeData.summary.coreExpertise}
+        />
+        <TopSkills skills={resumeData.topSkills} />
+        <Experience experiences={resumeData.experiences} />
+        <Education education={resumeData.education} />
+        <OtherQualifications qualifications={resumeData.qualifications} />
+      </div>
+    </div>
+  );
+}
+
+export default App;
