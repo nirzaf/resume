@@ -4,7 +4,7 @@ import TopSkills from './components/TopSkills';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import OtherQualifications from './components/OtherQualifications';
-import profileImage from './assets/profile.JPG';
+import profileImage from './assets/profile.jpg';
 
 export const resumeData = {
   header: {
