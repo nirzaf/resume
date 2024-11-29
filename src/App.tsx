@@ -19,9 +19,42 @@ const resumeData = {
       portfolio: "nirzaf.github.io"
     }
   },
-  summary: `As a Senior Software Development Specialist at the Primary Health Care Corporation in Qatar, I architect and develop robust, high-concurrency web applications focusing on exceptional user experiences. With over a decade of experience in software engineering, I have consistently delivered innovative solutions across diverse industries, specializing in scalable architectures and performance optimization. My proven track record demonstrates expertise in building enterprise-grade applications that drive business success and technological advancement.
-
-My core expertise encompasses full-stack development, cloud architecture, and agile methodologies, with particular strength in designing distributed systems and microservices. I excel in implementing real-time applications while maintaining clean code practices and mentoring development teams. Passionate about innovation, I bring a strategic approach to solving complex technical challenges and am seeking opportunities to drive transformative projects in a dynamic environment.`,
+  summary: {
+    professionalOverview: {
+      text: "As a Senior Software Development Specialist at Primary Health Care Corporation, I architect and develop robust, high-concurrency web applications focusing on exceptional user experiences. With extensive experience in software engineering, I have consistently delivered innovative solutions across diverse industries, specializing in scalable architectures and performance optimization.",
+      highlights: [
+        {
+          icon: "fa-rocket",
+          text: "Led development of enterprise-scale healthcare systems"
+        },
+        {
+          icon: "fa-layer-group",
+          text: "Specialized in scalable architectures and microservices"
+        },
+        {
+          icon: "fa-chart-line",
+          text: "Proven track record of performance optimization"
+        }
+      ]
+    },
+    coreExpertise: {
+      text: "My expertise encompasses full-stack development, cloud architecture, and agile methodologies, with particular strength in designing distributed systems and microservices. I excel in implementing real-time applications while maintaining clean code practices, leading development teams, and driving technological innovation through strategic solutions.",
+      highlights: [
+        {
+          icon: "fa-code",
+          text: "Full-stack development with modern technologies"
+        },
+        {
+          icon: "fa-cloud",
+          text: "Cloud architecture and distributed systems"
+        },
+        {
+          icon: "fa-users-gear",
+          text: "Team leadership and agile methodologies"
+        }
+      ]
+    }
+  },
   topSkills: [
     "React",
     "C#/.NET Core",
@@ -219,7 +252,10 @@ function App() {
     <div className="min-h-screen bg-gray-50 dark:bg-dark">
       <div className="content-wrapper py-8 space-y-8">
         <Header {...resumeData.header} />
-        <Summary text={resumeData.summary} />
+        <Summary 
+          professionalOverview={resumeData.summary.professionalOverview}
+          coreExpertise={resumeData.summary.coreExpertise}
+        />
         <TopSkills skills={resumeData.topSkills} />
         <Experience experiences={resumeData.experiences} />
         <Education education={resumeData.education} />
