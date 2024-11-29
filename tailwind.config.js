@@ -27,6 +27,7 @@ export default {
         'spin-slow': 'spin 8s linear infinite',
         'gradient-xy': 'gradient-xy 15s ease infinite',
         'tilt': 'tilt 10s infinite linear',
+        'gradient-x': 'gradient-x 15s ease infinite',
       },
       keyframes: {
         fadeIn: {
@@ -54,6 +55,16 @@ export default {
         'gradient-xy': {
           '0%, 100%': {
             'background-size': '400% 400%',
+            'background-position': 'left center'
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center'
+          }
+        },
+        'gradient-x': {
+          '0%, 100%': {
+            'background-size': '200% 200%',
             'background-position': 'left center'
           },
           '50%': {

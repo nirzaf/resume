@@ -27,14 +27,6 @@ const Summary: FC<SummaryProps> = ({ professionalOverview, coreExpertise }) => {
 
   return (
     <section className="mb-12">
-      <h2
-        ref={titleRef}
-        className={`text-2xl font-bold text-gray-800 dark:text-white mb-8 transform transition-all duration-700 ${
-          isTitleVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-        }`}
-      >
-        About Me
-      </h2>
       <div
         ref={contentRef}
         className={`grid grid-cols-1 md:grid-cols-2 gap-8 transform transition-all duration-700 ${
