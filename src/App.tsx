@@ -5,7 +5,7 @@ import TopSkills from './components/TopSkills';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import OtherQualifications from './components/OtherQualifications';
-import profileImage from './assets/profile.jpg';
+import profileImage from './assets/profile.JPG';
 
 export const resumeData = {
   header: {
@@ -16,9 +16,9 @@ export const resumeData = {
       email: "mfmfazrin1986@gmail.com",
       mobile: "+94772049123",
       location: "Colombo, Sri Lanka",
-      linkedin: "https://www.linkedin.com/in/mohamed-fazrin/",
-      github: "https://github.com/fazrinmohamed",
-      portfolio: "https://fazrinmohamed.github.io"
+      linkedin: "https://linkedin.com/in/mfmfazrin",
+      github: "https://github.com/nirzaf",
+      portfolio: "https://nirzaf.github.io"
     }
   },
   summary: {
