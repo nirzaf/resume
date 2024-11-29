@@ -17,10 +17,6 @@ interface SummaryProps {
 }
 
 const Summary: FC<SummaryProps> = ({ professionalOverview, coreExpertise }) => {
-  const { elementRef: titleRef, isVisible: isTitleVisible } = useIntersectionObserver<HTMLHeadingElement>({
-    threshold: 0.5,
-  });
-
   const { elementRef: contentRef, isVisible: isContentVisible } = useIntersectionObserver<HTMLDivElement>({
     threshold: 0.2,
   });

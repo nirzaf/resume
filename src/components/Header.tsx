@@ -125,7 +125,7 @@ const ContactItem: FC<ContactItemProps> = ({
 }) => {
   // Get color based on icon type
   const getIconColors = (icon: string) => {
-    const colors = {
+    const colors: { [key: string]: string } = {
       'fa-envelope': 'from-blue-400/20 to-blue-600/20 group-hover:from-blue-400 group-hover:to-blue-600',
       'fa-mobile-alt': 'from-purple-400/20 to-purple-600/20 group-hover:from-purple-400 group-hover:to-purple-600',
       'fa-map-marker-alt': 'from-indigo-400/20 to-indigo-600/20 group-hover:from-indigo-400 group-hover:to-indigo-600',
