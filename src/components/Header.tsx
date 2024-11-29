@@ -14,9 +14,10 @@ interface HeaderProps {
   name: string;
   title: string;
   contact: Contact;
+  profileImage: string;
 }
 
-const Header: FC<HeaderProps> = ({ name, title, contact }) => {
+const Header: FC<HeaderProps> = ({ name, title, contact, profileImage }) => {
   const { elementRef, isVisible } = useIntersectionObserver<HTMLDivElement>({
     threshold: 0.5,
   });
@@ -31,16 +32,36 @@ const Header: FC<HeaderProps> = ({ name, title, contact }) => {
       <div className={`relative px-8 py-10 transform transition-all duration-1000 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       }`}>
+        {/* Profile Image */}
+        <div className="relative w-32 h-32 mx-auto mb-6">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-spin-slow opacity-75 blur-lg"></div>
+          <div className="relative group">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+            <div className="relative">
+              <img
+                src={profileImage}
+                alt="Profile"
+                className="w-32 h-32 rounded-full object-cover border-2 border-white dark:border-gray-800 shadow-xl transform transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 rounded-full ring-2 ring-blue-500 dark:ring-purple-400 ring-offset-2 ring-offset-white dark:ring-offset-gray-900 transform transition-transform duration-500 group-hover:ring-4"></div>
+            </div>
+          </div>
+        </div>
+
         {/* Name and Title Section */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-4 tracking-tight">
             {name}
           </h1>
           <div className="relative inline-block">
-            <div className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-blue-200 to-purple-200 dark:from-blue-800 dark:to-purple-800 transform -skew-x-12"></div>
-            <h2 className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-medium relative z-10 px-4">
-              {title}
-            </h2>
+            <div className="relative px-6 py-2">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 dark:from-blue-400/20 dark:via-purple-400/20 dark:to-blue-400/20 rounded-lg transform -skew-x-12 transition-all duration-300 hover:skew-x-0"></div>
+              <div className="absolute inset-0 bg-white/50 dark:bg-gray-800/50 rounded-lg backdrop-blur-sm"></div>
+              <h2 className="relative text-xl md:text-2xl text-gray-800 dark:text-gray-200 font-medium">
+                {title}
+              </h2>
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-transparent via-blue-500 dark:via-blue-400 to-transparent"></div>
+            </div>
           </div>
         </div>
 

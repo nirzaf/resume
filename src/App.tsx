@@ -9,6 +9,7 @@ const resumeData = {
   header: {
     name: "Mohamed Fazrin",
     title: "Senior Software Development Specialist",
+    profileImage: "https://ik.imagekit.io/fazrinphcc/myprofilepic%20-%20crpped.jpg?updatedAt=1725949317901",
     contact: {
       email: "nirzaf@gmail.com",
       phone: "+974 7044 8284",
