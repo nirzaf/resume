@@ -47,10 +47,12 @@ export interface Education {
   degree: string;
   institution: string;
   location: string;
-  duration: string;
   description: string;
+  major?: string;
+  gpa?: string;
+  achievements?: string[];
+  honors?: string[];
   icon?: string;
-  courses?: string[];
 }
 
 export interface Qualification {

@@ -6,7 +6,10 @@ const EducationItem: React.FC<Education> = React.memo(({
   institution,
   location,
   description,
-  courses,
+  major,
+  gpa,
+  achievements,
+  honors,
   icon
 }) => {
   return (
@@ -39,20 +42,55 @@ const EducationItem: React.FC<Education> = React.memo(({
           </p>
         </div>
 
-        {/* Courses */}
-        {courses && courses.length > 0 && (
+        {/* Major and GPA */}
+        {(major || gpa) && (
+          <div className="flex flex-wrap gap-4">
+            {major && (
+              <div className="flex items-center">
+                <i className="fas fa-book-open mr-2 text-blue-500" />
+                <span className="text-gray-700 dark:text-gray-300">{major}</span>
+              </div>
+            )}
+            {gpa && (
+              <div className="flex items-center">
+                <i className="fas fa-award mr-2 text-blue-500" />
+                <span className="text-gray-700 dark:text-gray-300">GPA: {gpa}</span>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Achievements */}
+        {achievements && achievements.length > 0 && (
           <div className="space-y-3">
             <h4 className="text-lg font-semibold text-gray-800 dark:text-white flex items-center">
-              <i className="fas fa-book mr-2 text-blue-500" />
-              Key Courses
+              <i className="fas fa-trophy mr-2 text-blue-500" />
+              Key Achievements
+            </h4>
+            <ul className="list-disc list-inside space-y-2">
+              {achievements.map((achievement, index) => (
+                <li key={index} className="text-gray-700 dark:text-gray-300">
+                  {achievement}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Honors */}
+        {honors && honors.length > 0 && (
+          <div className="space-y-3">
+            <h4 className="text-lg font-semibold text-gray-800 dark:text-white flex items-center">
+              <i className="fas fa-medal mr-2 text-blue-500" />
+              Honors
             </h4>
             <div className="flex flex-wrap gap-2">
-              {courses.map((course, index) => (
+              {honors.map((honor, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200"
+                  className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium"
                 >
-                  {course}
+                  {honor}
                 </span>
               ))}
             </div>
@@ -62,7 +100,5 @@ const EducationItem: React.FC<Education> = React.memo(({
     </div>
   );
 });
-
-EducationItem.displayName = 'EducationItem';
 
 export default EducationItem;
