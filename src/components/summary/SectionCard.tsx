@@ -5,6 +5,7 @@ import { HighlightItem } from './HighlightItem';
 export const SectionCard: FC<SectionCardProps> = ({
   title,
   icon,
+  section,
   gradientFrom,
   gradientTo,
   darkGradientFrom,
@@ -14,38 +15,53 @@ export const SectionCard: FC<SectionCardProps> = ({
   iconGradientFrom,
   iconGradientTo,
   decorationColor,
-  section,
   highlightClassName,
   highlightIconClassName,
 }) => {
   return (
-    <div className="relative overflow-hidden group">
-      <div className={`absolute inset-0 bg-gradient-to-br from-${gradientFrom} to-${gradientTo} dark:from-${darkGradientFrom} dark:to-${darkGradientTo} rounded-xl transform -skew-y-2 group-hover:skew-y-0 transition-transform duration-300`}></div>
-      <div className={`relative p-8 rounded-xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-lg border border-${borderColor} dark:border-${darkBorderColor} h-full`}>
-        <div className="flex items-center mb-6">
-          <div className={`w-12 h-12 rounded-lg bg-gradient-to-br from-${iconGradientFrom} to-${iconGradientTo} flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
-            <i className={`fas ${icon} text-2xl text-white`}></i>
-          </div>
-          <h3 className="text-xl font-bold text-gray-800 dark:text-white ml-4">{title}</h3>
+    <div className={`
+      relative overflow-hidden rounded-2xl
+      bg-gradient-to-br from-${gradientFrom} to-${gradientTo}
+      dark:from-${darkGradientFrom} dark:to-${darkGradientTo}
+      border border-${borderColor} dark:border-${darkBorderColor}
+      shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1
+      p-6 md:p-8
+    `}>
+      {/* Header */}
+      <div className="flex items-center space-x-4 mb-6">
+        <div className={`
+          w-12 h-12 rounded-xl
+          bg-gradient-to-br from-${iconGradientFrom} to-${iconGradientTo}
+          flex items-center justify-center
+          shadow-lg
+        `}>
+          <i className={`fas ${icon} text-2xl text-white`}></i>
         </div>
-        <div className="relative">
-          <div className={`absolute top-0 left-0 w-16 h-16 -mt-4 -ml-4 bg-${decorationColor}/5 rounded-full`}></div>
-          <div className={`absolute bottom-0 right-0 w-24 h-24 -mb-6 -mr-6 bg-${decorationColor}/5 rounded-full`}></div>
-          <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-justify relative z-10 mb-6">
-            {section.text}
-          </p>
-          <ul className="space-y-4 relative z-10">
-            {section.highlights.map((highlight, index) => (
-              <HighlightItem
-                key={index}
-                {...highlight}
-                bgClassName={highlightClassName}
-                iconClassName={highlightIconClassName}
-              />
-            ))}
-          </ul>
+        <h2 className="text-2xl font-bold text-gray-800 dark:text-white">{title}</h2>
+      </div>
+
+      {/* Content */}
+      <div className="space-y-6">
+        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+          {section.text}
+        </p>
+
+        {/* Highlights */}
+        <div className="grid grid-cols-1 gap-3">
+          {section.highlights.map((highlight, index) => (
+            <HighlightItem
+              key={index}
+              highlight={highlight}
+              className={highlightClassName}
+              iconClassName={highlightIconClassName}
+            />
+          ))}
         </div>
       </div>
+
+      {/* Decorative corner accent */}
+      <div className={`absolute -top-10 -right-10 w-20 h-20 bg-${decorationColor}/10 rounded-full blur-xl`} />
+      <div className={`absolute -bottom-10 -left-10 w-20 h-20 bg-${decorationColor}/10 rounded-full blur-xl`} />
     </div>
   );
 };

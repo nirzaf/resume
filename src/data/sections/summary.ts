@@ -5,16 +5,20 @@ export const summaryData: SummaryData = {
     text: "As a Senior Software Development Specialist at Primary Health Care Corporation, I architect and develop robust, high-concurrency web applications focusing on exceptional user experiences. With extensive experience in software engineering, I have consistently delivered innovative solutions across diverse industries, specializing in scalable architectures and performance optimization.",
     highlights: [
       {
-        icon: "fa-rocket",
+        icon: "fa-hospital-user",
         text: "Led development of enterprise-scale healthcare systems"
       },
       {
-        icon: "fa-layer-group",
+        icon: "fa-microchip",
         text: "Specialized in scalable architectures and microservices"
       },
       {
-        icon: "fa-chart-line",
+        icon: "fa-gauge-high",
         text: "Proven track record of performance optimization"
+      },
+      {
+        icon: "fa-code-branch",
+        text: "Expert in distributed systems architecture"
       }
     ]
   },
@@ -22,16 +26,20 @@ export const summaryData: SummaryData = {
     text: "My expertise encompasses full-stack development, cloud architecture, and agile methodologies, with particular strength in designing distributed systems and microservices. I excel in implementing real-time applications while maintaining clean code practices, leading development teams, and driving technological innovation through strategic solutions.",
     highlights: [
       {
-        icon: "fa-code",
+        icon: "fa-layer-group",
         text: "Full-stack development with modern technologies"
       },
       {
-        icon: "fa-cloud",
+        icon: "fa-cloud-arrow-up",
         text: "Cloud architecture and distributed systems"
       },
       {
         icon: "fa-users-gear",
         text: "Team leadership and agile methodologies"
+      },
+      {
+        icon: "fa-wand-magic-sparkles",
+        text: "Innovation-driven solution architecture"
       }
     ]
   }
