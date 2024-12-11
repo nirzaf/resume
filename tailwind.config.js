@@ -5,6 +5,21 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: 'class',
+  safelist: [
+    // Gradient classes for cards
+    {
+      pattern: /from-(blue|indigo|purple|cyan)-(400|500|600|700)/,
+      variants: ['hover', 'dark'],
+    },
+    {
+      pattern: /to-(blue|indigo|purple|cyan)-(400|500|600|700)/,
+      variants: ['hover', 'dark'],
+    },
+    {
+      pattern: /via-(blue|indigo|purple|cyan)-(400|500|600|700)/,
+      variants: ['hover', 'dark'],
+    },
+  ],
   theme: {
     extend: {
       colors: {
@@ -30,6 +45,7 @@ export default {
         'gradient-x': 'gradient-x 15s ease infinite',
         'gradient-spin': 'gradient-spin 3s linear infinite',
         'shimmer': 'shimmer 2s infinite',
+        'slide-up': 'slide-up 0.5s ease-out forwards',
       },
       keyframes: {
         fadeIn: {
@@ -96,6 +112,16 @@ export default {
           },
           '75%': {
             transform: 'rotate(-0.5deg)',
+          },
+        },
+        'slide-up': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(20px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
           },
         },
       },

@@ -63,10 +63,16 @@ export interface Qualification {
   score?: string;
 }
 
+export interface CoreCompetency {
+  name: string;
+  description: string;
+  icon: string;
+}
+
 export interface ResumeData {
   header: HeaderData;
   summary: SummaryData;
-  topSkills: string[];
+  coreCompetencies: CoreCompetency[];
   experiences: Experience[];
   education: Education[];
   qualifications: Qualification[];

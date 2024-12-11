@@ -3,7 +3,7 @@ import React from 'react';
 import MainLayout from './components/layout/MainLayout';
 import Header from './components/Header';
 import Summary from './components/Summary';
-import TopSkills from './components/TopSkills';
+import { CoreCompetencies } from './components/skills/CoreCompetencies';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import OtherQualifications from './components/OtherQualifications';
@@ -17,7 +17,7 @@ const App: React.FC = () => {
         professionalOverview={resumeData.summary.professionalOverview}
         coreExpertise={resumeData.summary.coreExpertise}
       />
-      <TopSkills skills={resumeData.topSkills} />
+      <CoreCompetencies skills={resumeData.coreCompetencies} />
       <Experience experiences={resumeData.experiences} />
       <Education education={resumeData.education} />
       <OtherQualifications qualifications={resumeData.qualifications} />
