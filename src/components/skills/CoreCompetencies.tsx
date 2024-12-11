@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface Competency {
+export interface Competency {
   name: string;
   icon: string;
   level: number;

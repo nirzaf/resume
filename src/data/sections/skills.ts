@@ -1,3 +1,5 @@
+import { Competency } from '../../components/skills/CoreCompetencies';
+
 export const topSkills = [
   "React",
   "C#/.NET Core",
@@ -11,7 +13,7 @@ export const topSkills = [
   "Leadership & Mentoring"
 ];
 
-export const coreCompetencies = [
+export const coreCompetencies: Competency[] = [
   {
     name: "React & Modern Frontend",
     description: "Expert in React ecosystem with TypeScript, Next.js, and modern state management. Specialized in building performant, scalable web applications.",

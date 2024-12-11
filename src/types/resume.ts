@@ -1,3 +1,5 @@
+import { Competency } from '../components/skills/CoreCompetencies';
+
 export interface Contact {
   email: string;
   mobile: string;
@@ -66,16 +68,10 @@ export interface Qualification {
   score?: string;
 }
 
-export interface CoreCompetency {
-  name: string;
-  description: string;
-  icon: string;
-}
-
 export interface ResumeData {
   header: HeaderData;
   summary: SummaryData;
-  coreCompetencies: CoreCompetency[];
+  coreCompetencies: Competency[];
   experiences: Experience[];
   education: Education[];
   qualifications: Qualification[];
