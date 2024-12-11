@@ -32,11 +32,9 @@ const Header: FC<HeaderProps> = ({ name, title, contact, profileImage }) => {
       <GlassCard className="relative overflow-visible">
         <div className="relative z-10">
           <div className="flex flex-col items-center">
-            {/* Profile Image with Enhanced Animation */}
-            <div className="relative mb-8 group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-[#0607E1] to-blue-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt" />
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0607E1]/20 to-transparent rounded-full animate-spin-slow" />
+            {/* Profile Image */}
+            <div className="relative mb-8">
+              <div className="relative rounded-full overflow-hidden shadow-xl">
                 <ProfileImage src={profileImage} />
               </div>
             </div>
