@@ -1,105 +1,76 @@
-import { FC } from 'react';
-import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
+import React from 'react';
 
-interface SkillCardProps {
-  skill: string;
-  description: string;
+interface Competency {
+  name: string;
   icon: string;
-  colorClass: string;
-  index: number;
+  level: number;
+  description?: string;
+  keywords?: string[];
 }
-
-const SkillCard: FC<SkillCardProps> = ({
-  skill,
-  description,
-  icon,
-  colorClass,
-  index
-}) => {
-  return (
-    <div
-      className={`group relative overflow-hidden rounded-xl p-6 transition-all duration-300 
-        hover:scale-[1.02] hover:shadow-lg ${colorClass}`}
-      style={{
-        animationDelay: `${index * 100}ms`,
-      }}
-    >
-      {/* Background decoration */}
-      <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/10 transition-transform duration-500 group-hover:scale-150" />
-      
-      {/* Icon */}
-      <div className="relative mb-4">
-        <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/20 backdrop-blur-lg">
-          <i className={`fas ${icon} text-2xl text-white`}></i>
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="relative">
-        <h3 className="mb-2 text-xl font-bold text-white">{skill}</h3>
-        <p className="text-white/90">{description}</p>
-      </div>
-
-      {/* Hover effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-    </div>
-  );
-};
 
 interface CoreCompetenciesProps {
-  skills: Array<{
-    name: string;
-    description: string;
-    icon: string;
-  }>;
+  competencies: Competency[];
 }
 
-export const CoreCompetencies: FC<CoreCompetenciesProps> = ({ skills }) => {
-  const { elementRef, isVisible } = useIntersectionObserver<HTMLDivElement>({
-    threshold: 0.1,
-  });
-
-  const colorClasses = [
-    'bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700',
-    'bg-gradient-to-br from-indigo-500 to-indigo-600 dark:from-indigo-600 dark:to-indigo-700',
-    'bg-gradient-to-br from-purple-500 to-purple-600 dark:from-purple-600 dark:to-purple-700',
-    'bg-gradient-to-br from-cyan-500 to-cyan-600 dark:from-cyan-600 dark:to-cyan-700',
-  ];
-
+export const CoreCompetencies: React.FC<CoreCompetenciesProps> = ({ competencies }) => {
   return (
-    <section className="relative py-16">
-      {/* Background decorations */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-white dark:from-gray-900/50 dark:to-gray-800/50" />
-      <div className="absolute top-0 right-0 h-64 w-64 rounded-full bg-gradient-to-br from-blue-400/10 to-purple-400/10 blur-3xl" />
-      <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-gradient-to-tr from-purple-400/10 to-blue-400/10 blur-3xl" />
+    <section className="py-12 bg-gradient-to-b from-white to-[#0607E1]/5">
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 flex items-center">
+          <i className="fas fa-brain text-[#0607E1] mr-3"></i>
+          Core Competencies
+        </h2>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
-            Core Competencies
-          </h2>
-          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-            Key technical skills and expertise that drive innovation and results
-          </p>
-        </div>
-
-        {/* Skills grid */}
-        <div
-          ref={elementRef}
-          className={`grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 transition-all duration-700 ${
-            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-          }`}
-        >
-          {skills.map((skill, index) => (
-            <SkillCard
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {competencies.map((competency, index) => (
+            <div
               key={index}
-              skill={skill.name}
-              description={skill.description}
-              icon={skill.icon}
-              colorClass={colorClasses[index % colorClasses.length]}
-              index={index}
-            />
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:shadow-xl hover:scale-[1.02]"
+            >
+              {/* Header */}
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-[#0607E1]/10 rounded-full flex items-center justify-center mr-4">
+                  <i className={`${competency.icon} text-[#0607E1] text-2xl`}></i>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  {competency.name}
+                </h3>
+              </div>
+
+              {/* Progress Bar */}
+              <div className="mb-4">
+                <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-[#0607E1] transition-all duration-500 ease-out"
+                    style={{ width: `${competency.level}%` }}
+                  />
+                </div>
+                <div className="text-right text-sm text-gray-600 dark:text-gray-400 mt-1">
+                  {competency.level}%
+                </div>
+              </div>
+
+              {/* Description */}
+              {competency.description && (
+                <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                  {competency.description}
+                </p>
+              )}
+
+              {/* Keywords */}
+              {competency.keywords && competency.keywords.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {competency.keywords.map((keyword, kidx) => (
+                    <span
+                      key={kidx}
+                      className="px-3 py-1 bg-[#0607E1]/10 text-[#0607E1] rounded-full text-sm font-medium"
+                    >
+                      {keyword}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </div>
       </div>
