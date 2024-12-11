@@ -1,21 +1,21 @@
-import React from 'react';
-import { SummaryData } from '../../types/resume';
-import SummarySection from './SummarySection';
+import { FC } from 'react';
+import { SummaryProps } from '../../types/resume';
+import { SummarySection } from './SummarySection';
 
-const Summary: React.FC<SummaryData> = React.memo(({ professionalOverview, coreExpertise }) => {
+const Summary: FC<SummaryProps> = ({ professionalOverview, coreExpertise }) => {
   return (
     <section className="summary">
       <SummarySection
         title="Professional Overview"
-        {...professionalOverview}
+        section={professionalOverview}
       />
       <SummarySection
         title="Core Expertise"
-        {...coreExpertise}
+        section={coreExpertise}
       />
     </section>
   );
-});
+};
 
 Summary.displayName = 'Summary';
 

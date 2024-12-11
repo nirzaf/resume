@@ -10,8 +10,8 @@ export interface Contact {
 export interface HeaderData {
   name: string;
   title: string;
-  profileImage: string;
   contact: Contact;
+  profileImage: string;
 }
 
 export interface Highlight {
@@ -20,11 +20,16 @@ export interface Highlight {
 }
 
 export interface SummarySection {
-  text: string;
-  highlights: Highlight[];
+  description: string;
+  highlights: string[];
 }
 
 export interface SummaryData {
+  professionalOverview: SummarySection;
+  coreExpertise: SummarySection;
+}
+
+export interface SummaryProps {
   professionalOverview: SummarySection;
   coreExpertise: SummarySection;
 }

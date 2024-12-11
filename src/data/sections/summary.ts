@@ -2,45 +2,21 @@ import { SummaryData } from '../../types/resume';
 
 export const summaryData: SummaryData = {
   professionalOverview: {
-    text: "As a Senior Software Development Specialist at Primary Health Care Corporation, I architect and develop robust, high-concurrency web applications focusing on exceptional user experiences. With extensive experience in software engineering, I have consistently delivered innovative solutions across diverse industries, specializing in scalable architectures and performance optimization.",
+    description: "Senior Full Stack Developer with over 8 years of experience in building enterprise-scale web applications. Specialized in React, .NET Core, and cloud architecture with a strong focus on delivering high-performance, scalable solutions.",
     highlights: [
-      {
-        icon: "fa-hospital-user",
-        text: "Led development of enterprise-scale healthcare systems"
-      },
-      {
-        icon: "fa-microchip",
-        text: "Specialized in scalable architectures and microservices"
-      },
-      {
-        icon: "fa-gauge-high",
-        text: "Proven track record of performance optimization"
-      },
-      {
-        icon: "fa-code-branch",
-        text: "Expert in distributed systems architecture"
-      }
+      "Led development of mission-critical applications serving millions of users",
+      "Architected cloud-native solutions using microservices and serverless",
+      "Mentored junior developers and established best practices",
+      "Implemented CI/CD pipelines reducing deployment time by 70%"
     ]
   },
   coreExpertise: {
-    text: "My expertise encompasses full-stack development, cloud architecture, and agile methodologies, with particular strength in designing distributed systems and microservices. I excel in implementing real-time applications while maintaining clean code practices, leading development teams, and driving technological innovation through strategic solutions.",
+    description: "Expert in modern web technologies and cloud architecture, with a proven track record of delivering robust enterprise solutions. Strong focus on code quality, performance optimization, and scalable architecture.",
     highlights: [
-      {
-        icon: "fa-layer-group",
-        text: "Full-stack development with modern technologies"
-      },
-      {
-        icon: "fa-cloud-arrow-up",
-        text: "Cloud architecture and distributed systems"
-      },
-      {
-        icon: "fa-users-gear",
-        text: "Team leadership and agile methodologies"
-      },
-      {
-        icon: "fa-wand-magic-sparkles",
-        text: "Innovation-driven solution architecture"
-      }
+      "Full Stack Development with React and .NET Core",
+      "Cloud Architecture and Microservices",
+      "Performance Optimization and Security",
+      "Team Leadership and Agile Methodologies"
     ]
   }
 };

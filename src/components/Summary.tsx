@@ -1,8 +1,7 @@
 import { FC } from 'react';
+import { SummaryProps } from '../types/resume';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import { SummaryProps } from './summary/types';
-import { SectionCard } from './summary/SectionCard';
-import { DecorativeElements } from './summary/DecorativeElements';
+import { SectionCard } from './shared/SectionCard';
 
 const Summary: FC<SummaryProps> = ({ professionalOverview, coreExpertise }) => {
   const { elementRef: contentRef, isVisible: isContentVisible } = useIntersectionObserver<HTMLDivElement>({

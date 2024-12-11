@@ -1,3 +1,8 @@
+export interface NameTitleProps {
+  name: string;
+  title: string;
+}
+
 export interface Contact {
   email: string;
   mobile: string;
