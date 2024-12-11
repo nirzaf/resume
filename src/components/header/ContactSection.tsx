@@ -28,8 +28,11 @@ export const ContactSection: FC<ContactSectionProps> = ({ contact }) => {
 
   return (
     <div className="w-full px-4 py-6">
-      <div className="max-w-4xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="max-w-4xl mx-auto relative">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0607E1]/5 via-transparent to-[#0607E1]/5 rounded-2xl opacity-50" />
+        
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Contact Details */}
           <ContactItem
             icon="fa-envelope"
@@ -37,6 +40,7 @@ export const ContactSection: FC<ContactSectionProps> = ({ contact }) => {
             onClick={() => handleContactClick(contact.email, 'email')}
             gradientColors="from-[#0607E1] to-blue-600"
             darkGradientColors="dark:from-blue-400 dark:to-blue-600"
+            className="transform hover:scale-105 hover:-translate-y-1"
           />
           <ContactItem
             icon="fa-mobile-alt"
@@ -44,6 +48,7 @@ export const ContactSection: FC<ContactSectionProps> = ({ contact }) => {
             onClick={() => handleContactClick(contact.mobile, 'mobile')}
             gradientColors="from-[#0607E1] to-blue-600"
             darkGradientColors="dark:from-blue-400 dark:to-blue-600"
+            className="transform hover:scale-105 hover:-translate-y-1"
           />
           <ContactItem
             icon="fa-map-marker-alt"
@@ -51,6 +56,7 @@ export const ContactSection: FC<ContactSectionProps> = ({ contact }) => {
             onClick={() => handleContactClick(contact.location, 'location')}
             gradientColors="from-[#0607E1] to-blue-600"
             darkGradientColors="dark:from-blue-400 dark:to-blue-600"
+            className="transform hover:scale-105 hover:-translate-y-1"
           />
           
           {/* Social Links */}
@@ -60,6 +66,7 @@ export const ContactSection: FC<ContactSectionProps> = ({ contact }) => {
             onClick={() => handleContactClick(contact.linkedin, 'linkedin')}
             gradientColors="from-[#0607E1] to-blue-600"
             darkGradientColors="dark:from-blue-400 dark:to-blue-600"
+            className="transform hover:scale-105 hover:-translate-y-1"
           />
           <ContactItem
             icon="fab fa-github"
@@ -67,6 +74,7 @@ export const ContactSection: FC<ContactSectionProps> = ({ contact }) => {
             onClick={() => handleContactClick(contact.github, 'github')}
             gradientColors="from-[#0607E1] to-blue-600"
             darkGradientColors="dark:from-blue-400 dark:to-blue-600"
+            className="transform hover:scale-105 hover:-translate-y-1"
           />
           <ContactItem
             icon="fa-globe"
@@ -74,8 +82,15 @@ export const ContactSection: FC<ContactSectionProps> = ({ contact }) => {
             onClick={() => handleContactClick(contact.portfolio, 'portfolio')}
             gradientColors="from-[#0607E1] to-blue-600"
             darkGradientColors="dark:from-blue-400 dark:to-blue-600"
+            className="transform hover:scale-105 hover:-translate-y-1"
           />
         </div>
+
+        {/* Decorative corners */}
+        <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-[#0607E1]/30" />
+        <div className="absolute -top-1 -right-1 w-4 h-4 border-t-2 border-r-2 border-[#0607E1]/30" />
+        <div className="absolute -bottom-1 -left-1 w-4 h-4 border-b-2 border-l-2 border-[#0607E1]/30" />
+        <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-[#0607E1]/30" />
       </div>
     </div>
   );
