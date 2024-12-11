@@ -53,10 +53,16 @@ export interface Education {
   courses?: string[];
 }
 
+export interface Qualification {
+  // Please note that the properties of the Qualification interface are not specified in the instructions.
+  // You may need to add properties to this interface as per your requirements.
+}
+
 export interface ResumeData {
   header: HeaderData;
   summary: SummaryData;
   topSkills: string[];
   experiences: Experience[];
   education: Education[];
+  qualifications: Qualification[];
 }
