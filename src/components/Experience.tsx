@@ -19,9 +19,7 @@ const Experience: React.FC<Props> = React.memo(({ experiences }) => {
             <ExperienceCard
               key={index}
               experience={experience}
-              className={`transform transition-all duration-500 hover:scale-[1.02] ${
-                index % 2 === 0 ? 'lg:translate-y-4' : 'lg:-translate-y-4'
-              }`}
+              className="transform transition-all duration-500 hover:scale-[1.02]"
             />
           ))}
         </div>
