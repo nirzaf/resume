@@ -12,7 +12,7 @@ interface MainLayoutProps {
 }
 
 const MainLayout: React.FC<MainLayoutProps> = React.memo(({ data }) => {
-  const { header, summary, topSkills, experiences, education } = data;
+  const { header, summary, topSkills, experiences, education, qualifications } = data;
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -22,7 +22,7 @@ const MainLayout: React.FC<MainLayoutProps> = React.memo(({ data }) => {
         <TopSkills skills={topSkills} />
         <Experience experiences={experiences} />
         <Education education={education} />
-        <OtherQualifications />
+        <OtherQualifications qualifications={qualifications} />
       </div>
     </div>
   );

@@ -1,13 +1,6 @@
 import { FC } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-
-interface Qualification {
-  title: string;
-  issuer: string;
-  date: string;
-  description?: string;
-  score?: string;
-}
+import { Qualification } from '../types/resume';
 
 interface OtherQualificationsProps {
   qualifications: Qualification[];

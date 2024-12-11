@@ -1,10 +1,4 @@
-interface Qualification {
-  title: string;
-  issuer: string;
-  date: string;
-  description?: string;
-  score?: string;
-}
+import { Qualification } from '../../types/resume';
 
 export const qualificationsData: Qualification[] = [
   {

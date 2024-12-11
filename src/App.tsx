@@ -5,6 +5,7 @@ import Experience from './components/Experience';
 import Education from './components/Education';
 import OtherQualifications from './components/OtherQualifications';
 import profileImage from './assets/profile.jpg';
+import { experienceData } from './data/sections/experiences';
 
 export const resumeData = {
   header: {
@@ -68,65 +69,7 @@ export const resumeData = {
     "Agile Methodologies",
     "Leadership & Mentoring"
   ],
-  experiences: [
-    {
-      title: "Software Development Specialist",
-      company: "Primary Health Care Corporation",
-      location: "Qatar",
-      duration: "July 2022 – Present",
-      description: "Backend development and optimization for the Nar'aakom Mobile Application backend services.",
-      teamSize: 8,
-      projectCount: 1,
-      icon: "fa-laptop-code",
-      responsibilities: [
-        "Migrating REST API to GraphQL with Azure Active Directory integration",
-        "Optimizing query performance using Azure Redis distributed caching",
-        "Migrating data from SQL Server to FHIR resource-type database",
-        "Developing system for Open API to enable third-party services integration",
-        "Implementing real-time notifications using SignalR",
-        "Designing microservices architecture with Azure Service Bus"
-      ],
-      achievements: [
-        "Reduced query latency by 50% with Azure Redis implementation",
-        "Enabled seamless third-party integrations via Open API design",
-        "Improved system scalability with CQRS pattern",
-        "Achieved 99.9% uptime with monitoring"
-      ],
-      technologies: [
-        "GraphQL", "Azure Active Directory", "Azure Redis",
-        "SQL Server", "FHIR", ".NET Core 6",
-        "Entity Framework Core", "Azure Service Bus",
-        "SignalR", "Swagger/OpenAPI", "OAuth2/JWT",
-        "Docker", "Azure DevOps", "Application Insights"
-      ]
-    },
-    {
-      title: "Intern Developer",
-      company: "Sri Lanka Telecom",
-      location: "Sri Lanka",
-      duration: "September 2008 – July 2009",
-      description: "Contributed to the development and testing of telecom management systems.",
-      teamSize: 2,
-      projectCount: 1,
-      icon: "fa-phone-square",
-      responsibilities: [
-        "Developed and tested features for telecom management system using C# and ASP.NET",
-        "Worked on customer billing management module",
-        "Created reusable components for Windows Forms applications",
-        "Performed unit testing and debugging to improve system stability"
-      ],
-      achievements: [
-        "Enhanced customer billing module with new features",
-        "Improved system reliability through rigorous testing"
-      ],
-      technologies: [
-        "C#",
-        "ASP.NET",
-        "WinForms",
-        "Microsoft SQL Server"
-      ]
-    }
-  ],
+  experiences: experienceData,
   education: [
     {
       degree: "Master of Computer Science",

@@ -54,8 +54,11 @@ export interface Education {
 }
 
 export interface Qualification {
-  // Please note that the properties of the Qualification interface are not specified in the instructions.
-  // You may need to add properties to this interface as per your requirements.
+  title: string;
+  issuer: string;
+  date: string;
+  description?: string;
+  score?: string;
 }
 
 export interface ResumeData {
