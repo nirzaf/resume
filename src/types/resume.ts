@@ -37,6 +37,7 @@ export interface Experience {
   description: string;
   teamSize: number;
   projectCount: number;
+  icon?: string;
   responsibilities: string[];
   achievements: string[];
   technologies: string[];
@@ -48,7 +49,8 @@ export interface Education {
   location: string;
   duration: string;
   description: string;
-  courses: string[];
+  icon?: string;
+  courses?: string[];
 }
 
 export interface ResumeData {

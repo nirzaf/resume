@@ -1,46 +1,35 @@
-import { FC } from 'react';
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import { ExperienceProps, WorkExperience } from '../types/experience';
+import React from 'react';
+import { Experience as ExperienceType } from '../types/resume';
 import ExperienceCard from './experience/ExperienceCard';
 
-const Experience: FC<ExperienceProps> = ({ experiences }) => {
-  const { elementRef: titleRef, isVisible: isTitleVisible } = useIntersectionObserver<HTMLHeadingElement>({
-    threshold: 0.5,
-  });
+interface Props {
+  experiences: ExperienceType[];
+}
 
-  const midPoint = Math.ceil(experiences.length / 2);
-  const leftColumnExperiences = experiences.slice(0, midPoint);
-  const rightColumnExperiences = experiences.slice(midPoint);
-
+const Experience: React.FC<Props> = React.memo(({ experiences }) => {
   return (
-    <section className="mb-8">
-      <h2
-        ref={titleRef}
-        className={`text-2xl font-bold text-gray-800 dark:text-white mb-6 transform transition-all duration-700 ${
-          isTitleVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-        }`}
-      >
-        Professional Experience
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
-        <ExperienceColumn experiences={leftColumnExperiences} startIndex={0} />
-        <ExperienceColumn experiences={rightColumnExperiences} startIndex={midPoint} />
+    <section className="experience-section py-12 px-4 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+          Professional Experience
+        </h2>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {experiences.map((experience, index) => (
+            <ExperienceCard
+              key={index}
+              experience={experience}
+              className={`transform transition-all duration-500 hover:scale-[1.02] ${
+                index % 2 === 0 ? 'lg:translate-y-4' : 'lg:-translate-y-4'
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
-};
+});
 
-const ExperienceColumn: FC<{ experiences: WorkExperience[]; startIndex: number }> = ({ 
-  experiences, 
-  startIndex 
-}) => (
-  <div className="space-y-6 flex flex-col">
-    {experiences.map((exp, index) => (
-      <div key={index} className="flex-1">
-        <ExperienceCard exp={exp} index={index + startIndex} />
-      </div>
-    ))}
-  </div>
-);
+Experience.displayName = 'Experience';
 
 export default Experience;

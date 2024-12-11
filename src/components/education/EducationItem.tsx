@@ -7,28 +7,62 @@ const EducationItem: React.FC<Education> = React.memo(({
   location,
   duration,
   description,
-  courses
+  courses,
+  icon
 }) => {
   return (
-    <div className="education-item">
-      <div className="education-header">
-        <h3>{degree}</h3>
-        <div className="institution-info">
-          <span>{institution}</span>
-          <span>{location}</span>
-          <span>{duration}</span>
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+      {/* Header with Gradient Background */}
+      <div className="relative h-32 bg-gradient-to-r from-blue-600 to-purple-700 p-6">
+        {/* Icon */}
+        <div className="absolute -bottom-8 right-6 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center">
+          <i className={`fas ${icon || 'fa-graduation-cap'} text-3xl text-blue-600 dark:text-blue-400`}></i>
+        </div>
+
+        <h3 className="text-2xl font-bold text-white mb-2">{degree}</h3>
+        <div className="flex flex-col text-gray-100 space-y-1">
+          <div className="flex items-center">
+            <i className="fas fa-university mr-2 text-blue-200"></i>
+            <span className="font-medium">{institution}</span>
+          </div>
+          <div className="flex items-center">
+            <i className="fas fa-map-marker-alt mr-2 text-blue-200"></i>
+            <span>{location}</span>
+          </div>
+          <div className="flex items-center">
+            <i className="far fa-calendar-alt mr-2 text-blue-200"></i>
+            <span>{duration}</span>
+          </div>
         </div>
       </div>
-      
-      <p>{description}</p>
 
-      <div className="courses">
-        <h4>Key Courses</h4>
-        <ul>
-          {courses.map((course, index) => (
-            <li key={index}>{course}</li>
-          ))}
-        </ul>
+      <div className="p-6 space-y-6">
+        {/* Description */}
+        <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            {description}
+          </p>
+        </div>
+
+        {/* Courses */}
+        {courses && courses.length > 0 && (
+          <div className="space-y-3">
+            <h4 className="text-lg font-semibold text-gray-800 dark:text-white flex items-center">
+              <i className="fas fa-book mr-2 text-blue-500" />
+              Key Courses
+            </h4>
+            <div className="flex flex-wrap gap-2">
+              {courses.map((course, index) => (
+                <span
+                  key={index}
+                  className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200"
+                >
+                  {course}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
