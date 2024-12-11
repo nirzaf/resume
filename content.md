@@ -6,7 +6,7 @@ I'll convert the content of the HTML file to markdown format.
 - Location: Al Sadd, Doha, Qatar
 - Mobile: +97433253203
 - Phone: +94772049123
-- Email: mfmfazrin1986@gmail.com
+- Email: nirzaf@gmail.com
 - GitHub: [github.com/nirzaf](https://github.com/nirzaf)
 - LinkedIn: [linkedin.com/in/mfmfazrin](https://linkedin.com/in/mfmfazrin)
 - Portfolio: [nirzaf.github.io](https://nirzaf.github.io)
