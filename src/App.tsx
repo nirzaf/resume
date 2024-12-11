@@ -72,42 +72,39 @@ export const resumeData = {
   experiences: experienceData,
   education: [
     {
-      degree: "Master of Computer Science",
-      institution: "University of Colombo School of Computing",
-      location: "Colombo, Sri Lanka",
-      duration: "2019 - 2021",
-      description: "Specialized in Advanced Software Engineering and Distributed Systems. Conducted research on cloud-native architectures and microservices scalability patterns.",
-      gpa: "3.8/4.0",
+      degree: "MSc in Software Engineering",
+      institution: "Kingston University",
+      location: "London, United Kingdom",
+      description: "Advanced study in software engineering principles, focusing on enterprise software architecture and cloud computing.",
       major: "Software Engineering",
+      gpa: "Distinction",
       achievements: [
-        "Published research paper on 'Scalable Microservices Architecture Patterns' in IEEE Conference",
-        "Led a team of 5 in developing a cloud-native healthcare management system",
-        "Received Outstanding Graduate Student Award"
+        "Specialized in Cloud Computing and Distributed Systems",
+        "Research focus on Microservices Architecture",
+        "Advanced Software Design Patterns",
+        "Enterprise Application Development"
       ],
       honors: [
-        "Dean's List - All Semesters",
-        "Merit Scholarship Recipient",
-        "Best Research Project Award"
+        "Academic Excellence Award",
+        "Research Publication in Software Architecture"
       ]
     },
     {
-      degree: "Bachelor of Science in Computer Science",
-      institution: "University of Colombo",
-      location: "Colombo, Sri Lanka",
-      duration: "2015 - 2019",
-      description: "Comprehensive study of computer science fundamentals with focus on software development and system architecture. Participated in multiple hackathons and coding competitions.",
-      gpa: "3.7/4.0",
-      major: "Computer Science",
-      minor: "Mathematics",
+      degree: "BE in Software Engineering",
+      institution: "London Metropolitan University",
+      location: "London, United Kingdom",
+      description: "Comprehensive study of software engineering fundamentals with emphasis on practical application development.",
+      major: "Software Engineering",
+      gpa: "First Class Honours",
       achievements: [
-        "Developed an AI-powered attendance tracking system for the university",
-        "Captain of the university programming team",
-        "Completed internship at Microsoft Innovation Center"
+        "Full Stack Development",
+        "Database Management Systems",
+        "Software Testing and Quality Assurance",
+        "Agile Development Methodologies"
       ],
       honors: [
-        "First Class Honours",
-        "Programming Competition Winner 2018",
-        "University Innovation Grant Recipient"
+        "Dean's List for Academic Excellence",
+        "Best Final Year Project Award"
       ]
     }
   ],

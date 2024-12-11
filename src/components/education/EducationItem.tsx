@@ -5,7 +5,6 @@ const EducationItem: React.FC<Education> = React.memo(({
   degree,
   institution,
   location,
-  duration,
   description,
   courses,
   icon
@@ -28,10 +27,6 @@ const EducationItem: React.FC<Education> = React.memo(({
           <div className="flex items-center">
             <i className="fas fa-map-marker-alt mr-2 text-blue-200"></i>
             <span>{location}</span>
-          </div>
-          <div className="flex items-center">
-            <i className="far fa-calendar-alt mr-2 text-blue-200"></i>
-            <span>{duration}</span>
           </div>
         </div>
       </div>
