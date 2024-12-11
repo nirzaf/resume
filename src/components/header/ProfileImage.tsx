@@ -7,12 +7,12 @@ interface ProfileImageProps {
 export const ProfileImage: FC<ProfileImageProps> = ({ src }) => {
   return (
     <div className="mb-8 group">
-      {/* Outer ring with gradient animation */}
+      {/* Outer ring with solid color */}
       <div className="
         relative inline-block
         p-1 rounded-full
-        bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500
-        animate-gradient-spin
+        bg-[#0607E1]
+        transition-colors duration-300
       ">
         {/* Inner container with hover effect */}
         <div className="

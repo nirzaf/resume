@@ -6,7 +6,7 @@ export const headerData: HeaderData = {
   title: "Senior Software Development Specialist",
   profileImage: profileImage,
   contact: {
-    email: "mfmfazrin1986@gmail.com",
+    email: "nirzaf@gmail.com",
     mobile: "+94772049123",
     location: "Colombo, Sri Lanka",
     linkedin: "https://linkedin.com/in/mfmfazrin",
