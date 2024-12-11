@@ -13,22 +13,22 @@ const EducationItem: React.FC<Education> = React.memo(({
   icon
 }) => {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-      {/* Header with Gradient Background */}
-      <div className="relative h-32 bg-gradient-to-r from-blue-600 to-purple-700 p-6">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl">
+      {/* Header */}
+      <div className="relative h-32 bg-[#0607E1] p-6">
         {/* Icon */}
         <div className="absolute -bottom-8 right-6 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center">
-          <i className={`fas ${icon || 'fa-graduation-cap'} text-3xl text-blue-600 dark:text-blue-400`}></i>
+          <i className={`fas ${icon || 'fa-graduation-cap'} text-3xl text-[#0607E1]`}></i>
         </div>
 
         <h3 className="text-2xl font-bold text-white mb-2">{degree}</h3>
-        <div className="flex flex-col text-gray-100 space-y-1">
+        <div className="flex flex-col text-white/90 space-y-1">
           <div className="flex items-center">
-            <i className="fas fa-university mr-2 text-blue-200"></i>
+            <i className="fas fa-university mr-2 text-white/75"></i>
             <span className="font-medium">{institution}</span>
           </div>
           <div className="flex items-center">
-            <i className="fas fa-map-marker-alt mr-2 text-blue-200"></i>
+            <i className="fas fa-map-marker-alt mr-2 text-white/75"></i>
             <span>{location}</span>
           </div>
         </div>
@@ -36,7 +36,7 @@ const EducationItem: React.FC<Education> = React.memo(({
 
       <div className="p-6 space-y-6">
         {/* Description */}
-        <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+        <div className="bg-[#0607E1]/5 rounded-lg p-4">
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
             {description}
           </p>
@@ -47,13 +47,13 @@ const EducationItem: React.FC<Education> = React.memo(({
           <div className="flex flex-wrap gap-4">
             {major && (
               <div className="flex items-center">
-                <i className="fas fa-book-open mr-2 text-blue-500" />
+                <i className="fas fa-book-open mr-2 text-[#0607E1]"></i>
                 <span className="text-gray-700 dark:text-gray-300">{major}</span>
               </div>
             )}
             {gpa && (
               <div className="flex items-center">
-                <i className="fas fa-award mr-2 text-blue-500" />
+                <i className="fas fa-award mr-2 text-[#0607E1]"></i>
                 <span className="text-gray-700 dark:text-gray-300">GPA: {gpa}</span>
               </div>
             )}
@@ -64,7 +64,7 @@ const EducationItem: React.FC<Education> = React.memo(({
         {achievements && achievements.length > 0 && (
           <div className="space-y-3">
             <h4 className="text-lg font-semibold text-gray-800 dark:text-white flex items-center">
-              <i className="fas fa-trophy mr-2 text-blue-500" />
+              <i className="fas fa-trophy mr-2 text-[#0607E1]"></i>
               Key Achievements
             </h4>
             <ul className="list-disc list-inside space-y-2">
@@ -81,14 +81,14 @@ const EducationItem: React.FC<Education> = React.memo(({
         {honors && honors.length > 0 && (
           <div className="space-y-3">
             <h4 className="text-lg font-semibold text-gray-800 dark:text-white flex items-center">
-              <i className="fas fa-medal mr-2 text-blue-500" />
+              <i className="fas fa-medal mr-2 text-[#0607E1]"></i>
               Honors
             </h4>
             <div className="flex flex-wrap gap-2">
               {honors.map((honor, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium"
+                  className="px-3 py-1 bg-[#0607E1]/10 text-[#0607E1] dark:text-[#0607E1] rounded-full text-sm font-medium"
                 >
                   {honor}
                 </span>
