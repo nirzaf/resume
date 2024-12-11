@@ -27,55 +27,70 @@ export const ContactSection: FC<ContactSectionProps> = ({ contact }) => {
   };
 
   return (
-    <div className="w-full px-4">
-      <div className="max-w-3xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="w-full px-4 py-6">
+      <div className="max-w-4xl mx-auto relative">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0607E1]/5 via-transparent to-[#0607E1]/5 rounded-2xl opacity-50" />
+        
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Contact Details */}
           <ContactItem
             icon="fa-envelope"
             text={contact.email}
             onClick={() => handleContactClick(contact.email, 'email')}
-            gradientColors="from-blue-400 to-blue-600"
-            darkGradientColors="dark:from-blue-300 dark:to-blue-500"
+            gradientColors="from-[#0607E1] to-blue-600"
+            darkGradientColors="dark:from-blue-400 dark:to-blue-600"
+            className="transform hover:scale-105 hover:-translate-y-1"
           />
           <ContactItem
             icon="fa-mobile-alt"
             text={contact.mobile}
             onClick={() => handleContactClick(contact.mobile, 'mobile')}
-            gradientColors="from-purple-400 to-purple-600"
-            darkGradientColors="dark:from-purple-300 dark:to-purple-500"
+            gradientColors="from-[#0607E1] to-blue-600"
+            darkGradientColors="dark:from-blue-400 dark:to-blue-600"
+            className="transform hover:scale-105 hover:-translate-y-1"
           />
           <ContactItem
             icon="fa-map-marker-alt"
             text={contact.location}
             onClick={() => handleContactClick(contact.location, 'location')}
-            gradientColors="from-indigo-400 to-indigo-600"
-            darkGradientColors="dark:from-indigo-300 dark:to-indigo-500"
+            gradientColors="from-[#0607E1] to-blue-600"
+            darkGradientColors="dark:from-blue-400 dark:to-blue-600"
+            className="transform hover:scale-105 hover:-translate-y-1"
           />
-
+          
           {/* Social Links */}
           <ContactItem
-            icon="fa-linkedin"
+            icon="fab fa-linkedin-in"
             text="LinkedIn"
             onClick={() => handleContactClick(contact.linkedin, 'linkedin')}
-            gradientColors="from-blue-400 to-blue-600"
-            darkGradientColors="dark:from-blue-300 dark:to-blue-500"
+            gradientColors="from-[#0607E1] to-blue-600"
+            darkGradientColors="dark:from-blue-400 dark:to-blue-600"
+            className="transform hover:scale-105 hover:-translate-y-1"
           />
           <ContactItem
-            icon="fa-github"
+            icon="fab fa-github"
             text="GitHub"
             onClick={() => handleContactClick(contact.github, 'github')}
-            gradientColors="from-gray-600 to-gray-800"
-            darkGradientColors="dark:from-gray-400 dark:to-gray-600"
+            gradientColors="from-[#0607E1] to-blue-600"
+            darkGradientColors="dark:from-blue-400 dark:to-blue-600"
+            className="transform hover:scale-105 hover:-translate-y-1"
           />
           <ContactItem
             icon="fa-globe"
             text="Portfolio"
             onClick={() => handleContactClick(contact.portfolio, 'portfolio')}
-            gradientColors="from-green-400 to-green-600"
-            darkGradientColors="dark:from-green-300 dark:to-green-500"
+            gradientColors="from-[#0607E1] to-blue-600"
+            darkGradientColors="dark:from-blue-400 dark:to-blue-600"
+            className="transform hover:scale-105 hover:-translate-y-1"
           />
         </div>
+
+        {/* Decorative corners */}
+        <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-[#0607E1]/30" />
+        <div className="absolute -top-1 -right-1 w-4 h-4 border-t-2 border-r-2 border-[#0607E1]/30" />
+        <div className="absolute -bottom-1 -left-1 w-4 h-4 border-b-2 border-l-2 border-[#0607E1]/30" />
+        <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-[#0607E1]/30" />
       </div>
     </div>
   );

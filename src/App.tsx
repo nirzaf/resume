@@ -17,7 +17,7 @@ const App: React.FC = () => {
         professionalOverview={resumeData.summary.professionalOverview}
         coreExpertise={resumeData.summary.coreExpertise}
       />
-      <CoreCompetencies skills={resumeData.coreCompetencies} />
+      <CoreCompetencies competencies={resumeData.coreCompetencies} />
       <Experience experiences={resumeData.experiences} />
       <Education education={resumeData.education} />
       <OtherQualifications qualifications={resumeData.qualifications} />

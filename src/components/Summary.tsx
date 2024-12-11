@@ -9,56 +9,68 @@ const Summary: FC<SummaryProps> = ({ professionalOverview, coreExpertise }) => {
   });
 
   return (
-    <section className="mb-12 relative">
+    <section className="py-16 relative">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 -z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 -z-10" />
       
-      <div
-        ref={contentRef}
-        className={`grid grid-cols-1 lg:grid-cols-2 gap-8 transform transition-all duration-700 ${
-          isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
-        }`}
-      >
-        {/* Professional Overview Card */}
-        <SectionCard
-          title="Professional Overview"
-          icon="fa-user-tie"
-          gradientFrom="blue-50"
-          gradientTo="blue-100"
-          darkGradientFrom="blue-900/20"
-          darkGradientTo="blue-800/20"
-          borderColor="blue-200"
-          darkBorderColor="blue-700"
-          iconGradientFrom="blue-400"
-          iconGradientTo="blue-600"
-          decorationColor="blue-500"
-          section={professionalOverview}
-          highlightClassName="bg-blue-100/50 dark:bg-blue-800/30 hover:bg-blue-100 dark:hover:bg-blue-800/50 transform transition-all duration-300 hover:translate-x-1"
-          highlightIconClassName="text-blue-500 dark:text-blue-400"
-        />
-
-        {/* Core Expertise Card */}
-        <SectionCard
-          title="Core Expertise"
-          icon="fa-brain"
-          gradientFrom="purple-50"
-          gradientTo="purple-100"
-          darkGradientFrom="purple-900/20"
-          darkGradientTo="purple-800/20"
-          borderColor="purple-200"
-          darkBorderColor="purple-700"
-          iconGradientFrom="purple-400"
-          iconGradientTo="purple-600"
-          decorationColor="purple-500"
-          section={coreExpertise}
-          highlightClassName="bg-purple-100/50 dark:bg-purple-800/30 hover:bg-purple-100 dark:hover:bg-purple-800/50 transform transition-all duration-300 hover:translate-x-1"
-          highlightIconClassName="text-purple-500 dark:text-purple-400"
-        />
+      {/* Animated background patterns */}
+      <div className="absolute inset-0 overflow-hidden -z-10">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#0607E1]/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#0607E1]/5 rounded-full blur-3xl animate-pulse" />
       </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          ref={contentRef}
+          className={`grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 transform transition-all duration-1000 ${
+            isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
+          }`}
+        >
+          {/* Professional Overview Card */}
+          <div className={`transform transition-all duration-700 delay-100 ${
+            isContentVisible ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
+          }`}>
+            <SectionCard
+              title="Professional Overview"
+              icon="fa-user-tie"
+              gradientFrom="[#0607E1]/5"
+              gradientTo="blue-100/50"
+              darkGradientFrom="gray-900"
+              darkGradientTo="gray-800"
+              borderColor="[#0607E1]/20"
+              darkBorderColor="blue-800/30"
+              iconGradientFrom="[#0607E1]"
+              iconGradientTo="blue-600"
+              decorationColor="[#0607E1]"
+              section={professionalOverview}
+              highlightClassName="bg-[#0607E1]/5 dark:bg-blue-900/20 hover:bg-[#0607E1]/10 dark:hover:bg-blue-900/30 transform transition-all duration-300 hover:translate-x-1"
+              highlightIconClassName="text-[#0607E1] dark:text-blue-400"
+            />
+          </div>
 
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-purple-400/10 to-blue-400/10 rounded-full blur-3xl -z-10" />
+          {/* Core Expertise Card */}
+          <div className={`transform transition-all duration-700 delay-200 ${
+            isContentVisible ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
+          }`}>
+            <SectionCard
+              title="Core Expertise"
+              icon="fa-brain"
+              gradientFrom="[#0607E1]/5"
+              gradientTo="[#0607E1]/10"
+              darkGradientFrom="gray-900"
+              darkGradientTo="gray-800"
+              borderColor="[#0607E1]/20"
+              darkBorderColor="[#0607E1]/30"
+              iconGradientFrom="[#0607E1]"
+              iconGradientTo="blue-600"
+              decorationColor="[#0607E1]"
+              section={coreExpertise}
+              highlightClassName="bg-[#0607E1]/5 dark:bg-[#0607E1]/20 hover:bg-[#0607E1]/10 dark:hover:bg-[#0607E1]/30 transform transition-all duration-300 hover:translate-x-1 hover:scale-[1.02]"
+              highlightIconClassName="text-[#0607E1] dark:text-blue-400"
+            />
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

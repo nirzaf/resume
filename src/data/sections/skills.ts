@@ -1,3 +1,5 @@
+import { Competency } from '../../components/skills/CoreCompetencies';
+
 export const topSkills = [
   "React",
   "C#/.NET Core",
@@ -15,41 +17,37 @@ export const coreCompetencies = [
   {
     name: "React & Modern Frontend",
     description: "Expert in React ecosystem with TypeScript, Next.js, and modern state management. Specialized in building performant, scalable web applications.",
-    icon: "fa-react"
+    icon: "fab fa-react",
+    keywords: ["React", "TypeScript", "Next.js", "Redux", "Tailwind CSS"]
   },
   {
     name: "C# & .NET Core",
     description: "Advanced proficiency in building enterprise-grade applications using C# and .NET Core, with deep understanding of SOLID principles and design patterns.",
-    icon: "fa-code"
+    icon: "fas fa-code",
+    keywords: ["C#", ".NET Core", "ASP.NET", "Entity Framework", "LINQ"]
   },
   {
     name: "Cloud Architecture",
     description: "Extensive experience with Azure cloud services, implementing scalable microservices architectures and serverless solutions.",
-    icon: "fa-cloud"
+    icon: "fas fa-cloud",
+    keywords: ["Azure", "Microservices", "Docker", "Kubernetes", "CI/CD"]
   },
   {
     name: "Database Engineering",
-    description: "Expert in SQL Server optimization, database design, and implementation of efficient data access patterns using Entity Framework Core.",
-    icon: "fa-database"
+    description: "Proficient in designing and optimizing database solutions, with expertise in both SQL and NoSQL technologies.",
+    icon: "fas fa-database",
+    keywords: ["SQL Server", "MongoDB", "Redis", "PostgreSQL", "Database Design"]
   },
   {
-    name: "DevOps & CI/CD",
-    description: "Proficient in implementing automated deployment pipelines, containerization with Docker, and maintaining high-availability systems.",
-    icon: "fa-cogs"
+    name: "DevOps & Infrastructure",
+    description: "Strong background in DevOps practices, implementing CI/CD pipelines, and managing cloud infrastructure.",
+    icon: "fas fa-server",
+    keywords: ["Azure DevOps", "GitHub Actions", "Terraform", "Docker", "Kubernetes"]
   },
   {
-    name: "API Development",
-    description: "Specialized in designing and implementing RESTful APIs, GraphQL services, and real-time communication using SignalR.",
-    icon: "fa-network-wired"
-  },
-  {
-    name: "Agile Leadership",
-    description: "Experienced in leading development teams, mentoring junior developers, and implementing agile methodologies for project success.",
-    icon: "fa-users-cog"
-  },
-  {
-    name: "Security & Performance",
-    description: "Strong focus on application security, performance optimization, and implementing best practices for robust enterprise solutions.",
-    icon: "fa-shield-alt"
+    name: "Software Architecture",
+    description: "Experienced in designing scalable, maintainable software architectures following best practices and design patterns.",
+    icon: "fas fa-layer-group",
+    keywords: ["Design Patterns", "SOLID", "DDD", "Microservices", "Event-Driven"]
   }
 ];
