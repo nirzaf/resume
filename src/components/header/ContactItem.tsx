@@ -18,70 +18,36 @@ export const ContactItem: FC<ContactItemProps> = ({
   return (
     <button
       onClick={onClick}
-      className="
-        group w-full
-        p-3 rounded-xl
-        bg-white/5 dark:bg-white/5
-        hover:bg-white/10 dark:hover:bg-white/10
-        backdrop-blur-sm
-        border border-white/10 dark:border-white/5
-        transform transition-all duration-300
-        hover:-translate-y-1 hover:shadow-lg
-        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
-      "
+      className="group relative w-full p-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
     >
-      <div className="flex items-center space-x-3">
-        {/* Icon Container */}
-        <div className="relative flex-shrink-0">
-          {/* Gradient Background */}
-          <div className={`
-            w-10 h-10 rounded-lg
-            bg-gradient-to-br ${gradientColors} ${darkGradientColors}
-            flex items-center justify-center
-            transform transition-all duration-300
-            group-hover:scale-110 group-hover:rotate-3
-          `}>
-            {/* Icon */}
-            <i className={`
-              fas ${icon}
-              text-white text-lg
-              transform transition-transform duration-300
-              group-hover:scale-110
-            `}></i>
-
-            {/* Shine Effect */}
-            <div className="
-              absolute inset-0 rounded-lg
-              bg-gradient-to-r from-transparent via-white/30 to-transparent
-              opacity-0 group-hover:opacity-100
-              transition-opacity duration-300
-              -rotate-45
-            "></div>
-          </div>
+      {/* Background Gradient Effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-xl shadow-lg opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
+      
+      {/* Border Gradient */}
+      <div className="absolute inset-0 rounded-xl bg-gradient-to-r opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+      
+      {/* Content */}
+      <div className="relative flex items-center space-x-4">
+        {/* Icon with Gradient Background */}
+        <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${gradientColors} ${darkGradientColors} flex items-center justify-center transform transition-transform duration-300 group-hover:rotate-6`}>
+          <i className={`fas ${icon} text-white text-xl`}></i>
         </div>
-
+        
         {/* Text */}
-        <span className="
-          flex-grow text-left
-          text-sm sm:text-base
-          font-medium
-          text-gray-700 dark:text-gray-300
-          group-hover:text-gray-900 dark:group-hover:text-white
-          transition-colors duration-300
-        ">
-          {text}
-        </span>
-
+        <div className="flex-1 text-left">
+          <p className="text-gray-700 dark:text-gray-200 font-medium truncate transition-colors duration-300">
+            {text}
+          </p>
+        </div>
+        
         {/* Arrow Icon */}
-        <i className="
-          fas fa-arrow-right
-          text-gray-400
-          transform transition-all duration-300
-          group-hover:translate-x-1 group-hover:text-gray-600
-          dark:text-gray-500 dark:group-hover:text-white
-          opacity-0 group-hover:opacity-100
-        "></i>
+        <div className="text-gray-400 transform transition-transform duration-300 group-hover:translate-x-1">
+          <i className="fas fa-chevron-right"></i>
+        </div>
       </div>
+      
+      {/* Hover Effect */}
+      <div className="absolute inset-0 rounded-xl bg-gradient-to-r opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
     </button>
   );
 };

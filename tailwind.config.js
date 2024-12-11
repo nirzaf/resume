@@ -46,6 +46,7 @@ export default {
         'gradient-spin': 'gradient-spin 3s linear infinite',
         'shimmer': 'shimmer 2s infinite',
         'slide-up': 'slide-up 0.5s ease-out forwards',
+        'pulse': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         fadeIn: {
@@ -108,10 +109,10 @@ export default {
             transform: 'rotate(0deg)',
           },
           '25%': {
-            transform: 'rotate(0.5deg)',
+            transform: 'rotate(1deg)',
           },
           '75%': {
-            transform: 'rotate(-0.5deg)',
+            transform: 'rotate(-1deg)',
           },
         },
         'slide-up': {
@@ -122,6 +123,14 @@ export default {
           '100%': {
             opacity: '1',
             transform: 'translateY(0)',
+          },
+        },
+        pulse: {
+          '0%, 100%': {
+            opacity: '.5',
+          },
+          '50%': {
+            opacity: '.15',
           },
         },
       },
