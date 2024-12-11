@@ -35,17 +35,15 @@ export interface SummaryProps {
 }
 
 export interface Experience {
-  title: string;
   company: string;
+  position: string;
   location: string;
-  duration: string;
+  startDate: string;
+  endDate: string;
   description: string;
-  teamSize: number;
-  projectCount: number;
-  icon?: string;
-  responsibilities: string[];
   achievements: string[];
   technologies: string[];
+  logo?: string;
 }
 
 export interface Education {

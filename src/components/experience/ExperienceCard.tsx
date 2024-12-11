@@ -1,137 +1,102 @@
-import React from 'react';
+import { FC } from 'react';
 import { Experience } from '../../types/resume';
-import Card from '../shared/Card';
-import IconBadge from '../shared/IconBadge';
-import IconListItem from '../shared/IconListItem';
 
 interface ExperienceCardProps {
   experience: Experience;
-  className?: string;
+  index: number;
 }
 
-const ExperienceCard: React.FC<ExperienceCardProps> = React.memo(({ experience, className = '' }) => {
+export const ExperienceCard: FC<ExperienceCardProps> = ({ experience, index }) => {
   const {
-    title,
     company,
+    position,
     location,
-    duration,
+    startDate,
+    endDate,
     description,
-    teamSize,
-    projectCount,
-    icon,
-    responsibilities,
     achievements,
-    technologies
+    technologies,
+    logo,
   } = experience;
 
   return (
-    <Card className={className}>
-      {/* Header with Gradient Background */}
-      <div className="relative h-32 bg-gradient-to-r from-blue-600 to-purple-700 p-6">
-        {/* Icon */}
-        <div className="absolute -bottom-8 right-6 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center">
-          <i className={`fas ${icon || 'fa-briefcase'} text-3xl text-blue-600 dark:text-blue-400`} />
+    <div
+      className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-gray-800"
+      style={{
+        opacity: 1,
+        transform: 'none',
+        transition: `all 0.3s ease ${index * 0.1}s`,
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      
+      <div className="relative">
+        {/* Header */}
+        <div className="flex items-center justify-between">
+          <div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+              {position}
+            </h3>
+            <p className="text-lg font-semibold text-blue-600 dark:text-blue-400">
+              {company}
+            </p>
+          </div>
+          {logo && (
+            <img
+              src={logo}
+              alt={`${company} logo`}
+              className="h-12 w-12 object-contain"
+            />
+          )}
         </div>
 
-        <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
-        <div className="flex flex-col md:flex-row md:items-center text-gray-100 space-y-1 md:space-y-0 md:space-x-3">
-          <div className="flex items-center">
-            <i className="fas fa-building mr-2 text-blue-200" />
-            <span className="font-medium">{company}</span>
-          </div>
-          <div className="hidden md:block text-blue-200">•</div>
-          <div className="flex items-center">
-            <i className="fas fa-map-marker-alt mr-2 text-blue-200" />
-            <span>{location}</span>
-          </div>
+        {/* Location and Duration */}
+        <div className="mt-2 flex items-center text-sm text-gray-600 dark:text-gray-300">
+          <span>{location}</span>
+          <span className="mx-2">•</span>
+          <span>{startDate} - {endDate}</span>
         </div>
-        <div className="mt-2 flex items-center text-gray-100">
-          <i className="far fa-calendar-alt mr-2 text-blue-200" />
-          <span className="text-lg font-medium tracking-wide">{duration}</span>
-        </div>
-      </div>
 
-      <div className="p-6 space-y-6">
         {/* Description */}
-        <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-            {description}
-          </p>
-        </div>
-
-        {/* Team Size & Project Count */}
-        <div className="flex flex-wrap gap-4">
-          <IconBadge
-            icon="fa-users"
-            text={`Team Size: ${teamSize}`}
-            color="blue"
-          />
-          <IconBadge
-            icon="fa-project-diagram"
-            text={`Projects: ${projectCount}`}
-            color="purple"
-          />
-        </div>
-
-        {/* Responsibilities */}
-        <div className="space-y-3">
-          <h4 className="text-lg font-semibold text-gray-800 dark:text-white flex items-center">
-            <i className="fas fa-tasks mr-2 text-blue-500" />
-            Key Responsibilities
-          </h4>
-          <ul className="space-y-2 bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4">
-            {responsibilities.map((resp, index) => (
-              <IconListItem
-                key={index}
-                icon="fa-check-circle"
-                text={resp}
-                iconColor="green"
-              />
-            ))}
-          </ul>
-        </div>
+        <p className="mt-4 text-gray-700 dark:text-gray-300">
+          {description}
+        </p>
 
         {/* Achievements */}
-        <div className="space-y-3">
-          <h4 className="text-lg font-semibold text-gray-800 dark:text-white flex items-center">
-            <i className="fas fa-trophy mr-2 text-yellow-500" />
+        <div className="mt-4">
+          <h4 className="text-sm font-semibold uppercase tracking-wide text-gray-900 dark:text-white">
             Key Achievements
           </h4>
-          <ul className="space-y-2 bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4">
-            {achievements.map((achievement, index) => (
-              <IconListItem
-                key={index}
-                icon="fa-star"
-                text={achievement}
-                iconColor="yellow"
-              />
+          <ul className="mt-2 space-y-2">
+            {achievements.map((achievement, i) => (
+              <li
+                key={i}
+                className="flex items-start text-gray-700 dark:text-gray-300"
+              >
+                <span className="mr-2 text-blue-500">•</span>
+                {achievement}
+              </li>
             ))}
           </ul>
         </div>
 
         {/* Technologies */}
-        <div className="pt-2">
-          <h4 className="text-lg font-semibold text-gray-800 dark:text-white flex items-center mb-3">
-            <i className="fas fa-code mr-2 text-purple-500" />
-            Technologies Used
+        <div className="mt-4">
+          <h4 className="text-sm font-semibold uppercase tracking-wide text-gray-900 dark:text-white">
+            Technologies
           </h4>
-          <div className="flex flex-wrap gap-2">
-            {technologies.map((tech, index) => (
-              <IconBadge
-                key={index}
-                icon="fa-code"
-                text={tech}
-                color="gray"
-                className="text-sm"
-              />
+          <div className="mt-2 flex flex-wrap gap-2">
+            {technologies.map((tech, i) => (
+              <span
+                key={i}
+                className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+              >
+                {tech}
+              </span>
             ))}
           </div>
         </div>
       </div>
-    </Card>
+    </div>
   );
-});
-
-ExperienceCard.displayName = 'ExperienceCard';
-
-export default ExperienceCard;
+};

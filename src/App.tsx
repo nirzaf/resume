@@ -4,7 +4,7 @@ import MainLayout from './components/layout/MainLayout';
 import Header from './components/Header';
 import Summary from './components/Summary';
 import { CoreCompetencies } from './components/skills/CoreCompetencies';
-import Experience from './components/Experience';
+import { Experience } from './components/Experience';
 import Education from './components/Education';
 import OtherQualifications from './components/OtherQualifications';
 import { resumeData } from './data/resumeData';
