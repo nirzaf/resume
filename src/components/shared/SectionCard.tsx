@@ -37,14 +37,15 @@ export const SectionCard: FC<SectionCardProps> = ({
   highlightIconClassName,
 }) => {
   return (
-    <div className="group relative">
+    <div className="group relative h-full">
       {/* Background blur effect */}
       <div className={`absolute -inset-1 rounded-xl bg-gradient-to-r from-${decorationColor}/20 to-${decorationColor}/10 blur-xl opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt`} />
       
-      <div className={`relative rounded-xl border bg-gradient-to-br p-8 transition-all duration-300 transform group-hover:scale-[1.02] group-hover:shadow-xl backdrop-blur-sm
+      <div className={`relative h-full rounded-xl border bg-gradient-to-br p-8 transition-all duration-300 transform group-hover:scale-[1.02] group-hover:shadow-xl backdrop-blur-sm
         from-${gradientFrom} to-${gradientTo}
         dark:from-${darkGradientFrom} dark:to-${darkGradientTo}
-        border-${borderColor} dark:border-${darkBorderColor}`}
+        border-${borderColor} dark:border-${darkBorderColor}
+        flex flex-col`}
       >
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-gradient-to-br from-${decorationColor}/10 to-transparent blur-2xl animate-pulse" />
@@ -56,35 +57,35 @@ export const SectionCard: FC<SectionCardProps> = ({
             from-${iconGradientFrom} to-${iconGradientTo}
             text-white`}
           >
-            <i className={`fas ${icon} text-xl`}></i>
+            <i className={`fas ${icon} text-2xl`}></i>
           </div>
           <h3 className="text-2xl font-bold text-gray-800 dark:text-white tracking-wide">{title}</h3>
         </div>
 
         {/* Description */}
         <div className="mb-8">
-          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
             {section.description}
           </p>
         </div>
 
         {/* Highlights */}
-        <div className="space-y-4">
+        <div className="space-y-6 flex-grow">
           {section.highlights.map((highlight, index) => (
             <div
               key={index}
-              className={`group/item flex items-start space-x-3 rounded-lg p-4 transition-all duration-300 ${highlightClassName}`}
+              className={`group/item flex items-start space-x-4 rounded-lg p-4 transition-all duration-300 ${highlightClassName}`}
             >
-              <div className="flex-shrink-0 transform transition-transform duration-300 group-hover/item:scale-110">
-                <i className={`fas fa-check-circle text-lg ${highlightIconClassName}`}></i>
+              <div className="flex-shrink-0 transform transition-transform duration-300 group-hover/item:scale-110 pt-1">
+                <i className={`fas fa-check-circle text-xl ${highlightIconClassName}`}></i>
               </div>
               <div className="flex-1">
-                <p className="text-gray-700 dark:text-gray-200 font-medium leading-relaxed">
+                <p className="text-gray-700 dark:text-gray-200 font-medium leading-relaxed text-lg">
                   {highlight}
                 </p>
               </div>
-              <div className="flex-shrink-0 opacity-0 transform translate-x-2 transition-all duration-300 group-hover/item:opacity-100 group-hover/item:translate-x-0">
-                <i className={`fas fa-arrow-right ${highlightIconClassName}`}></i>
+              <div className="flex-shrink-0 opacity-0 transform translate-x-2 transition-all duration-300 group-hover/item:opacity-100 group-hover/item:translate-x-0 pt-1">
+                <i className={`fas fa-arrow-right text-lg ${highlightIconClassName}`}></i>
               </div>
             </div>
           ))}
