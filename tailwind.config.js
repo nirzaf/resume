@@ -28,6 +28,8 @@ export default {
         'gradient-xy': 'gradient-xy 15s ease infinite',
         'tilt': 'tilt 10s infinite linear',
         'gradient-x': 'gradient-x 15s ease infinite',
+        'gradient-spin': 'gradient-spin 3s linear infinite',
+        'shimmer': 'shimmer 2s infinite',
       },
       keyframes: {
         fadeIn: {
@@ -72,17 +74,30 @@ export default {
             'background-position': 'right center'
           }
         },
+        'gradient-spin': {
+          '0%, 100%': {
+            transform: 'rotate(0deg)'
+          },
+          '50%': {
+            transform: 'rotate(180deg)'
+          }
+        },
+        'shimmer': {
+          '100%': {
+            transform: 'translateX(100%)',
+          },
+        },
         'tilt': {
           '0%, 50%, 100%': {
             transform: 'rotate(0deg)',
           },
           '25%': {
-            transform: 'rotate(1deg)',
+            transform: 'rotate(0.5deg)',
           },
           '75%': {
-            transform: 'rotate(-1deg)',
-          }
-        }
+            transform: 'rotate(-0.5deg)',
+          },
+        },
       },
       boxShadow: {
         '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
