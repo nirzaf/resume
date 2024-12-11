@@ -18,5 +18,12 @@ export const qualificationsData: Qualification[] = [
     issuer: "Scrum.org",
     date: "2021",
     description: "Certified in Scrum framework and Agile methodologies"
+  },
+  {
+    title: "IELTS (Academic)",
+    issuer: "British Council",
+    date: "2021",
+    score: "7.5 Average",
+    description: "Demonstrated high proficiency in academic English language skills across reading, writing, listening, and speaking"
   }
 ];
