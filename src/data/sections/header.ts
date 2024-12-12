@@ -8,9 +8,9 @@ export const headerData: HeaderData = {
   contact: {
     email: "nirzaf@gmail.com",
     mobile: "+97433253203",
-    location: "Colombo, Sri Lanka",
+    location: "Qatar",
     linkedin: "https://linkedin.com/in/mfmfazrin",
     github: "https://github.com/nirzaf",
-    portfolio: "https://nirzaf.github.io"
+    portfolio: "https://dotnetevangelist.net/resume"
   }
 };
