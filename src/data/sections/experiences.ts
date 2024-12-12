@@ -32,7 +32,14 @@ export const experienceData: Experience[] = [
       createTech("OAuth2"),
       createTech("Docker"),
       createTech("Azure DevOps"),
-      createTech("Application Insights")
+      createTech("Application Insights"),
+      createTech("FHIR"),
+      createTech("Azure Active Directory"),
+      createTech("Azure Redis Cache"),
+      createTech("Azure API Management"),
+      createTech("Azure Monitor"),
+      createTech("Azure Key Vault"),
+      createTech("Terraform")
     ],
     logo: "https://ik.imagekit.io/quadrate/Primary-Health-Care-Corporation.png?updatedAt=1733949029677"
   },
@@ -68,7 +75,15 @@ export const experienceData: Experience[] = [
       createTech("RxJS"),
       createTech("TypeScript"),
       createTech("SASS"),
-      createTech("JWT Auth")
+      createTech("JWT Auth"),
+      createTech("Azure DevOps"),
+      createTech("Docker"),
+      createTech("Kubernetes"),
+      createTech("Microservices"),
+      createTech("Redis"),
+      createTech("Azure Monitor"),
+      createTech("Application Insights"),
+      createTech("Azure Key Vault")
     ],
     logo: "https://ik.imagekit.io/quadrate/QTS%20Logo%20Primary.png?updatedAt=1733854434969"
   },
@@ -104,7 +119,11 @@ export const experienceData: Experience[] = [
       createTech("NLog"),
       createTech("xUnit"),
       createTech("Material Design"),
-      createTech("TPL")
+      createTech("TPL"),
+      createTech("WebRTC"),
+      createTech("SIP"),
+      createTech("RTP"),
+      createTech("SignalR")
     ],
     logo: "https://ik.imagekit.io/quadrate/logo-PNG-300x72-1.png?updatedAt=1733949152854"
   },
@@ -136,7 +155,13 @@ export const experienceData: Experience[] = [
       createTech("Azure Redis Cache"),
       createTech("OpenXml"),
       createTech("Visual Studio"),
-      createTech("Azure CI/CD")
+      createTech("Azure CI/CD"),
+      createTech("TypeScript"),
+      createTech("SASS"),
+      createTech("Azure DevOps"),
+      createTech("Docker"),
+      createTech("Jest"),
+      createTech("Cypress")
     ],
     logo: "https://ik.imagekit.io/quadrate/images.jpeg?updatedAt=1733949236783"
   },
@@ -159,7 +184,14 @@ export const experienceData: Experience[] = [
       createTech("Microsoft SQL Server"),
       createTech("iTextSharp"),
       createTech("Crystal Reports"),
-      createTech("Visual Studio")
+      createTech("Visual Studio"),
+      createTech("Entity Framework"),
+      createTech("jQuery"),
+      createTech("Bootstrap"),
+      createTech("Azure DevOps"),
+      createTech("REST API"),
+      createTech("SignalR"),
+      createTech("Redis")
     ],
     logo: "https://ik.imagekit.io/quadrate/Nemioc%20Holdings.jpg?updatedAt=1733949381218"
   },
@@ -182,7 +214,13 @@ export const experienceData: Experience[] = [
       createTech("ASP.NET Web API"),
       createTech("PDF.js"),
       createTech("Microsoft Visual Studio"),
-      createTech("Microsoft SQL Server")
+      createTech("Microsoft SQL Server"),
+      createTech("Entity Framework"),
+      createTech("jQuery"),
+      createTech("Bootstrap"),
+      createTech("Azure"),
+      createTech("Redis"),
+      createTech("REST API")
     ],
     logo: "https://ik.imagekit.io/quadrate/download.png?updatedAt=1733949542846"
   },
@@ -199,12 +237,16 @@ export const experienceData: Experience[] = [
       "Optimized team's efficiency in feature implementation and bug fixes"
     ],
     technologies: [
-      createTech("XML"),
-      createTech("Office InfoPath"),
-      createTech("C#.NET"),
-      createTech("ASP.NET"),
+      createTech(".NET Framework"),
+      createTech("C#"),
+      createTech("Windows Forms"),
       createTech("SQL Server"),
-      createTech("Visual Studio")
+      createTech("Visual Studio"),
+      createTech("Office Info Path"),
+      createTech("XML"),
+      createTech("XSLT"),
+      createTech("jQuery"),
+      createTech("Bootstrap")
     ],
     logo: "https://ik.imagekit.io/quadrate/QTS-Logo-%20emposed.png?updatedAt=1722424244082"
   }

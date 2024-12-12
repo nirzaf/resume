@@ -48,6 +48,15 @@ export const frontendTech = {
   redux: createTech('Redux'),
   materialui: createTech('Material-UI'),
   bootstrap: createTech('Bootstrap'),
+  angular: createTech('Angular'),
+  vuejs: createTech('Vue.js'),
+  svelte: createTech('Svelte'),
+  jquery: createTech('jQuery'),
+  sass: createTech('SASS'),
+  webpack: createTech('Webpack'),
+  vite: createTech('Vite'),
+  storybook: createTech('Storybook'),
+  figma: createTech('Figma'),
 };
 
 // Backend Technologies
@@ -62,6 +71,13 @@ export const backendTech = {
   mongodb: createTech('MongoDB'),
   redis: createTech('Redis'),
   mysql: createTech('MySQL'),
+  aspnet: createTech('ASP.NET'),
+  entityframework: createTech('Entity Framework'),
+  dapper: createTech('Dapper'),
+  grpc: createTech('gRPC'),
+  nunit: createTech('NUnit'),
+  xunit: createTech('xUnit'),
+  serilog: createTech('Serilog'),
 };
 
 // Cloud & DevOps Technologies
@@ -74,6 +90,25 @@ export const cloudTech = {
   git: createTech('Git'),
   github: createTech('GitHub'),
   gitlab: createTech('GitLab'),
+  terraform: createTech('Terraform'),
+  azuredevops: createTech('Azure DevOps'),
+  prometheus: createTech('Prometheus'),
+  grafana: createTech('Grafana'),
+  elasticsearch: createTech('Elasticsearch'),
+  rabbitmq: createTech('RabbitMQ'),
+};
+
+// Database Technologies
+export const databaseTech = {
+  sqlserver: createTech('SQL Server'),
+  postgresql: createTech('PostgreSQL'),
+  mongodb: createTech('MongoDB'),
+  redis: createTech('Redis'),
+  mysql: createTech('MySQL'),
+  oracle: createTech('Oracle'),
+  cassandra: createTech('Cassandra'),
+  cosmosdb: createTech('Cosmos DB'),
+  dynamodb: createTech('DynamoDB'),
 };
 
 // Testing Technologies
@@ -82,6 +117,22 @@ export const testingTech = {
   cypress: createTech('Cypress'),
   selenium: createTech('Selenium'),
   postman: createTech('Postman'),
+  rtl: createTech('React Testing Library'),
+  mocha: createTech('Mocha'),
+  chai: createTech('Chai'),
+  mstest: createTech('MSTest'),
+};
+
+// Architecture & Tools
+export const architectureTech = {
+  microservices: createTech('Microservices'),
+  ddd: createTech('DDD'),
+  cqrs: createTech('CQRS'),
+  eventdriven: createTech('Event-Driven'),
+  oauth: createTech('OAuth 2.0'),
+  jwt: createTech('JWT'),
+  swagger: createTech('Swagger'),
+  openapi: createTech('OpenAPI'),
 };
 
 // Group all technologies
@@ -89,5 +140,7 @@ export const technologies = {
   frontend: Object.values(frontendTech),
   backend: Object.values(backendTech),
   cloud: Object.values(cloudTech),
+  database: Object.values(databaseTech),
   testing: Object.values(testingTech),
+  architecture: Object.values(architectureTech),
 };
