@@ -8,7 +8,7 @@ interface Props {
 
 export const SummarySection: FC<Props> = ({ title, section }) => {
   return (
-    <div className="mb-8 bg-white dark:bg-gray-900 rounded-lg p-6 shadow-[0_2px_4px_rgba(6,7,225,0.01)] dark:shadow-[0_2px_4px_rgba(6,7,225,0.02)]">
+    <div className="mb-6 bg-white dark:bg-gray-900 rounded-lg p-4 sm:p-6 shadow-[0_2px_4px_rgba(6,7,225,0.01)] dark:shadow-[0_2px_4px_rgba(6,7,225,0.02)] w-full max-w-full overflow-hidden">
       <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{title}</h3>
       <p className="text-gray-700 dark:text-gray-300 mb-4">{section.description}</p>
       <ul className="space-y-2">
