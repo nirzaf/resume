@@ -1,5 +1,3 @@
-import { Competency } from '../../components/skills/CoreCompetencies';
-
 export const topSkills = [
   "React",
   "C#/.NET Core",

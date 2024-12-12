@@ -6,6 +6,7 @@ interface ContactItemProps {
   onClick: () => void;
   gradientColors: string;
   darkGradientColors: string;
+  className?: string;
 }
 
 export const ContactItem: FC<ContactItemProps> = ({
@@ -14,11 +15,12 @@ export const ContactItem: FC<ContactItemProps> = ({
   onClick,
   gradientColors,
   darkGradientColors,
+  className,
 }) => {
   return (
     <button
       onClick={onClick}
-      className="group relative w-full p-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
+      className={`group relative w-full p-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 ${className}`}
     >
       {/* Background Gradient Effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-xl shadow-lg opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
