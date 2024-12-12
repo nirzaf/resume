@@ -21,7 +21,7 @@ const TechCard: React.FC<{ tech: Technology; index: number }> = ({ tech, index }
       transition={{ delay: index * 0.1 }}
       whileHover={{ y: -5 }}
     >
-      <div className="absolute inset-0 bg-[#0607E1]/5 backdrop-blur-xl rounded-xl shadow-lg transition-all duration-500 group-hover:shadow-xl group-hover:bg-[#0607E1]/10" />
+      <div className="absolute inset-0 bg-white dark:bg-gray-800 rounded-xl shadow-lg transition-all duration-500 group-hover:shadow-xl" />
       
       <div className="relative h-full w-full flex flex-col items-center justify-center p-1.5">
         <div className="relative w-6 h-6 sm:w-8 sm:h-8 mb-1 flex items-center justify-center">
@@ -55,14 +55,12 @@ interface TechStackProps {
 export const TechStack: React.FC<TechStackProps> = ({ technologies }) => {
   return (
     <div className="relative mt-4 overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-white via-transparent to-white dark:from-gray-800 dark:to-gray-800 z-10" />
-      
       <motion.div
         className="flex gap-2 py-2 px-4"
         animate={{
           x: ["0%", "calc(-50%)"],
           transition: {
-            duration: 30,
+            duration: 20,
             repeat: Infinity,
             ease: "linear",
             repeatType: "loop"
@@ -71,23 +69,6 @@ export const TechStack: React.FC<TechStackProps> = ({ technologies }) => {
       >
         {[...technologies, ...technologies].map((tech, index) => (
           <TechCard key={`row1-${index}`} tech={tech} index={index} />
-        ))}
-      </motion.div>
-
-      <motion.div
-        className="flex gap-2 py-2 px-4"
-        animate={{
-          x: ["calc(-50%)", "0%"],
-          transition: {
-            duration: 30,
-            repeat: Infinity,
-            ease: "linear",
-            repeatType: "loop"
-          }
-        }}
-      >
-        {[...technologies, ...technologies].map((tech, index) => (
-          <TechCard key={`row2-${index}`} tech={tech} index={index} />
         ))}
       </motion.div>
     </div>
