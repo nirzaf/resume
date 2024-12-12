@@ -11,13 +11,21 @@ export const useIntersectionObserver = <T extends HTMLElement>({
 }: UseIntersectionObserverProps = {}) => {
   const elementRef = useRef<T | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    if (typeof window === 'undefined' || !window.IntersectionObserver) {
+      setIsVisible(true);
+      return;
+    }
+
+    observerRef.current = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
+        const isElementVisible = entry.isIntersecting;
+        setIsVisible(isElementVisible);
+        
+        if (isElementVisible && observerRef.current && entry.target) {
+          observerRef.current.unobserve(entry.target);
         }
       },
       {
@@ -27,13 +35,13 @@ export const useIntersectionObserver = <T extends HTMLElement>({
     );
 
     const element = elementRef.current;
-    if (element) {
-      observer.observe(element);
+    if (element && observerRef.current) {
+      observerRef.current.observe(element);
     }
 
     return () => {
-      if (element) {
-        observer.unobserve(element);
+      if (observerRef.current) {
+        observerRef.current.disconnect();
       }
     };
   }, [threshold, rootMargin]);

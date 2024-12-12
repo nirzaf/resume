@@ -1,4 +1,5 @@
 import { Experience } from '../../types/resume';
+import { createTech } from '../technologies';
 
 export const experienceData: Experience[] = [
   {
@@ -19,11 +20,19 @@ export const experienceData: Experience[] = [
       "Developed system for Open API to enable third-party services integration"
     ],
     technologies: [
-      "GraphQL", "Azure Active Directory", "Azure Redis",
-      "SQL Server", "FHIR", ".NET Core 6",
-      "Entity Framework Core", "Azure Service Bus",
-      "SignalR", "Swagger/OpenAPI", "OAuth2/JWT",
-      "Docker", "Azure DevOps", "Application Insights"
+      createTech("GraphQL"),
+      createTech("Azure"),
+      createTech("Redis"),
+      createTech("SQL Server"),
+      createTech(".NET Core"),
+      createTech("C#"),
+      createTech("Azure Service Bus"),
+      createTech("SignalR"),
+      createTech("Swagger"),
+      createTech("OAuth2"),
+      createTech("Docker"),
+      createTech("Azure DevOps"),
+      createTech("Application Insights")
     ],
     logo: "https://ik.imagekit.io/quadrate/Primary-Health-Care-Corporation.png?updatedAt=1733949029677"
   },
@@ -45,11 +54,21 @@ export const experienceData: Experience[] = [
       "Implemented microservices integration using Azure Service Bus and RabbitMQ"
     ],
     technologies: [
-      ".NET Core 3.1", "C# 9", "Angular 12",
-      "Azure Functions", "Azure Logic Apps", "Cosmos DB",
-      "Azure Service Bus", "RabbitMQ", "xUnit.net",
-      "Angular Material", "NgRx", "RxJS",
-      "TypeScript", "SASS/SCSS", "JWT Auth"
+      createTech(".NET Core"),
+      createTech("C#"),
+      createTech("Angular"),
+      createTech("Azure Functions"),
+      createTech("Azure Logic Apps"),
+      createTech("Cosmos DB"),
+      createTech("Azure Service Bus"),
+      createTech("RabbitMQ"),
+      createTech("xUnit"),
+      createTech("Angular Material"),
+      createTech("NgRx"),
+      createTech("RxJS"),
+      createTech("TypeScript"),
+      createTech("SASS"),
+      createTech("JWT Auth")
     ],
     logo: "https://ik.imagekit.io/quadrate/QTS%20Logo%20Primary.png?updatedAt=1733854434969"
   },
@@ -70,11 +89,22 @@ export const experienceData: Experience[] = [
       "Designed scalable database architecture"
     ],
     technologies: [
-      ".NET Core 2.1", "AsterNET", "WPF", "C# 7",
-      "REST API", "MariaDB", "JSON", "XAML",
-      "Entity Framework Core", "AutoMapper",
-      "Prism", "Unity DI", "NLog", "xUnit",
-      "Material Design", "TPL"
+      createTech(".NET Core"),
+      createTech("AsterNET"),
+      createTech("WPF"),
+      createTech("C#"),
+      createTech("REST API"),
+      createTech("MariaDB"),
+      createTech("JSON"),
+      createTech("XAML"),
+      createTech("Entity Framework Core"),
+      createTech("AutoMapper"),
+      createTech("Prism"),
+      createTech("Unity DI"),
+      createTech("NLog"),
+      createTech("xUnit"),
+      createTech("Material Design"),
+      createTech("TPL")
     ],
     logo: "https://ik.imagekit.io/quadrate/logo-PNG-300x72-1.png?updatedAt=1733949152854"
   },
@@ -92,11 +122,21 @@ export const experienceData: Experience[] = [
       "Maintained 10/10 client scorecards throughout the project lifecycle"
     ],
     technologies: [
-      "Angular 6", "Bootstrap 4.2", ".NET Core 2.0",
-      "Web API", "EF Core 2.0", "AutoMapper",
-      "SQL Server 2017", "Azure Web Jobs", "Azure Blob Storage",
-      "Azure File Storage", "Azure Insights", "Azure Redis Cache",
-      "OpenXml", "Visual Studio 2017", "Azure CI/CD"
+      createTech("Angular"),
+      createTech("Bootstrap"),
+      createTech(".NET Core"),
+      createTech("Web API"),
+      createTech("EF Core"),
+      createTech("AutoMapper"),
+      createTech("SQL Server"),
+      createTech("Azure Web Jobs"),
+      createTech("Azure Blob Storage"),
+      createTech("Azure File Storage"),
+      createTech("Azure Insights"),
+      createTech("Azure Redis Cache"),
+      createTech("OpenXml"),
+      createTech("Visual Studio"),
+      createTech("Azure CI/CD")
     ],
     logo: "https://ik.imagekit.io/quadrate/images.jpeg?updatedAt=1733949236783"
   },
@@ -114,8 +154,12 @@ export const experienceData: Experience[] = [
       "Fixed bugs and added new features as per Agile methodology"
     ],
     technologies: [
-      "C#.NET", "ASP.NET", "Microsoft SQL Server 2012",
-      "iTextSharp", "Crystal Reports for Web", "Visual Studio 2015"
+      createTech("C#.NET"),
+      createTech("ASP.NET"),
+      createTech("Microsoft SQL Server"),
+      createTech("iTextSharp"),
+      createTech("Crystal Reports"),
+      createTech("Visual Studio")
     ],
     logo: "https://ik.imagekit.io/quadrate/Nemioc%20Holdings.jpg?updatedAt=1733949381218"
   },
@@ -133,8 +177,12 @@ export const experienceData: Experience[] = [
       "Improved UX and operational efficiency"
     ],
     technologies: [
-      ".NET Framework 4.0", "SignalR", "ASP.NET Web API",
-      "PDF.js", "Microsoft Visual Studio 2012", "Microsoft SQL Server 2008 R2"
+      createTech(".NET Framework"),
+      createTech("SignalR"),
+      createTech("ASP.NET Web API"),
+      createTech("PDF.js"),
+      createTech("Microsoft Visual Studio"),
+      createTech("Microsoft SQL Server")
     ],
     logo: "https://ik.imagekit.io/quadrate/download.png?updatedAt=1733949542846"
   },
@@ -151,8 +199,12 @@ export const experienceData: Experience[] = [
       "Optimized team's efficiency in feature implementation and bug fixes"
     ],
     technologies: [
-      "XML", "Office InfoPath", "C#.NET",
-      "ASP.NET", "SQL Server", "Visual Studio"
+      createTech("XML"),
+      createTech("Office InfoPath"),
+      createTech("C#.NET"),
+      createTech("ASP.NET"),
+      createTech("SQL Server"),
+      createTech("Visual Studio")
     ],
     logo: "https://ik.imagekit.io/quadrate/QTS-Logo-%20emposed.png?updatedAt=1722424244082"
   }

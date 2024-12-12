@@ -36,6 +36,11 @@ export interface SummaryProps {
   coreExpertise: SummarySection;
 }
 
+export interface Technology {
+  name: string;
+  icon: string;
+}
+
 export interface Experience {
   company: string;
   position: string;
@@ -44,7 +49,7 @@ export interface Experience {
   endDate: string;
   description: string;
   achievements: string[];
-  technologies: string[];
+  technologies: Technology[];
   logo?: string;
 }
 
