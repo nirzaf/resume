@@ -41,7 +41,7 @@ export const SectionCard: FC<SectionCardProps> = ({
       {/* Background blur effect */}
       <div className={`absolute -inset-1 rounded-xl bg-gradient-to-r from-${decorationColor}/20 to-${decorationColor}/10 blur-xl opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt`} />
       
-      <div className={`relative h-full rounded-xl border bg-gradient-to-br p-8 transition-all duration-300 transform group-hover:scale-[1.02] group-hover:shadow-xl backdrop-blur-sm
+      <div className={`relative h-full rounded-xl border bg-gradient-to-br p-4 sm:p-6 md:p-8 transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl backdrop-blur-sm
         from-${gradientFrom} to-${gradientTo}
         dark:from-${darkGradientFrom} dark:to-${darkGradientTo}
         border-${borderColor} dark:border-${darkBorderColor}
@@ -51,45 +51,29 @@ export const SectionCard: FC<SectionCardProps> = ({
         <div className="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-gradient-to-br from-${decorationColor}/10 to-transparent blur-2xl animate-pulse" />
         <div className="absolute bottom-0 left-0 -mb-4 -ml-4 h-24 w-24 rounded-full bg-gradient-to-tr from-${decorationColor}/10 to-transparent blur-2xl animate-pulse" />
         
-        {/* Header */}
-        <div className="relative mb-6 flex items-center space-x-4">
-          <div className={`rounded-xl bg-gradient-to-br p-3 shadow-lg transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6
-            from-${iconGradientFrom} to-${iconGradientTo}
-            text-white`}
-          >
-            <i className={`fas ${icon} text-2xl`}></i>
-          </div>
-          <h3 className="text-2xl font-bold text-gray-800 dark:text-white tracking-wide">{title}</h3>
+        {/* Card Header */}
+        <div className="flex items-center space-x-3 mb-4">
+          <i className={`fas ${icon} text-xl sm:text-2xl bg-gradient-to-r from-${iconGradientFrom} to-${iconGradientTo} bg-clip-text text-transparent`} />
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">{title}</h3>
         </div>
 
         {/* Description */}
-        <div className="mb-8">
-          <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
-            {section.description}
-          </p>
-        </div>
+        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4">
+          {section.description}
+        </p>
 
         {/* Highlights */}
-        <div className="space-y-6 flex-grow">
+        <ul className="space-y-2 mt-auto">
           {section.highlights.map((highlight, index) => (
-            <div
+            <li
               key={index}
-              className={`group/item flex items-start space-x-4 rounded-lg p-4 transition-all duration-300 ${highlightClassName}`}
+              className={`flex items-start space-x-2 rounded-lg p-2 text-sm sm:text-base ${highlightClassName}`}
             >
-              <div className="flex-shrink-0 transform transition-transform duration-300 group-hover/item:scale-110 pt-1">
-                <i className={`fas fa-check-circle text-xl ${highlightIconClassName}`}></i>
-              </div>
-              <div className="flex-1">
-                <p className="text-gray-700 dark:text-gray-200 font-medium leading-relaxed text-lg">
-                  {highlight}
-                </p>
-              </div>
-              <div className="flex-shrink-0 opacity-0 transform translate-x-2 transition-all duration-300 group-hover/item:opacity-100 group-hover/item:translate-x-0 pt-1">
-                <i className={`fas fa-arrow-right text-lg ${highlightIconClassName}`}></i>
-              </div>
-            </div>
+              <i className={`fas fa-check-circle mt-1 ${highlightIconClassName}`} />
+              <span className="flex-1">{highlight}</span>
+            </li>
           ))}
-        </div>
+        </ul>
 
         {/* Bottom decoration */}
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-${decorationColor}/30 to-transparent" />

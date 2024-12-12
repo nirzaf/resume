@@ -22,12 +22,12 @@ const Summary: FC<SummaryProps> = ({ professionalOverview, coreExpertise }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           ref={contentRef}
-          className={`grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 transform transition-all duration-1000 ${
+          className={`grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 xl:gap-12 transform transition-all duration-1000 ${
             isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
           }`}
         >
           {/* Professional Overview Card */}
-          <div className={`transform transition-all duration-700 delay-100 ${
+          <div className={`w-full transform transition-all duration-700 delay-100 ${
             isContentVisible ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
           }`}>
             <SectionCard
@@ -49,7 +49,7 @@ const Summary: FC<SummaryProps> = ({ professionalOverview, coreExpertise }) => {
           </div>
 
           {/* Core Expertise Card */}
-          <div className={`transform transition-all duration-700 delay-200 ${
+          <div className={`w-full transform transition-all duration-700 delay-200 ${
             isContentVisible ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
           }`}>
             <SectionCard
