@@ -127,3 +127,19 @@ button:focus-visible {
     @apply opacity-100 translate-y-0;
   }
 }
+
+/* PDF-specific styles */
+@media print {
+  .pdf-hide {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* Hide download button in PDF */
+@media print {
+  button {
+    display: none !important;
+  }
+}

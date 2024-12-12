@@ -5,6 +5,7 @@ import { ProfileImage } from './header/ProfileImage';
 import { NameTitle } from './header/NameTitle';
 import { ContactSection } from './header/ContactSection';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { DownloadButton } from './header/DownloadButton';
 
 const Header: FC<HeaderProps> = ({ name, title, contact, profileImage }) => {
   const { elementRef: headerRef, isVisible: isHeaderVisible } = useIntersectionObserver<HTMLDivElement>({
@@ -30,6 +31,7 @@ const Header: FC<HeaderProps> = ({ name, title, contact, profileImage }) => {
       </div>
 
       <GlassCard className="relative overflow-visible">
+        <DownloadButton />
         <div className="relative z-10">
           <div className="flex flex-col items-center">
             {/* Profile Image */}
