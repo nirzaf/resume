@@ -9,9 +9,14 @@ export interface Contact {
   portfolio: string;
 }
 
+export interface TaglineData {
+  text: string;
+  prepend: string;
+}
+
 export interface HeaderData {
   name: string;
-  title: string;
+  taglines: TaglineData[];
   contact: Contact;
   profileImage: string;
 }

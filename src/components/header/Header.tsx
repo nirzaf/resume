@@ -1,14 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { HeaderData } from '../../types/resume';
+import './Header.css';
 
-const Header: React.FC<HeaderData> = React.memo(({ name, title, profileImage, contact }) => {
+const Header: React.FC<HeaderData> = React.memo(({ name, taglines, profileImage, contact }) => {
+  const [currentTaglineIndex, setCurrentTaglineIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [displayedTagline, setDisplayedTagline] = useState(taglines[0]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      
+      setTimeout(() => {
+        setCurrentTaglineIndex((prevIndex) => (prevIndex + 1) % taglines.length);
+        setDisplayedTagline(taglines[(currentTaglineIndex + 1) % taglines.length]);
+        setIsAnimating(false);
+      }, 500);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [currentTaglineIndex, taglines]);
+
   return (
     <header className="header">
       <div className="profile-section">
         <img src={profileImage} alt={name} className="profile-image" />
         <div className="profile-info">
           <h1>{name}</h1>
-          <h2>{title}</h2>
+          <div className="tagline-container">
+            <h2 className={`animated-tagline ${isAnimating ? 'fade-out' : 'fade-in'}`}>
+              <span className="text-blue-500 font-medium mr-1">{displayedTagline.prepend}</span>
+              <span>{displayedTagline.text}</span>
+            </h2>
+          </div>
         </div>
       </div>
       <div className="contact-info">

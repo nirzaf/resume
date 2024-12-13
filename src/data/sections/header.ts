@@ -3,7 +3,28 @@ import profileImage from '../../assets/profile.jpg';
 
 export const headerData: HeaderData = {
   name: "Mohamed Fazrin",
-  title: "Senior Software Development Specialist",
+  taglines: [
+    {
+      text: "Senior Software Development Specialist",
+      prepend: "I am a"
+    },
+    {
+      text: "Crafting spin digital experiences with code",
+      prepend: "I enjoy"
+    },
+    {
+      text: "Building innovative solutions with passion",
+      prepend: "I love"
+    },
+    {
+      text: "Transforming ideas into digital reality",
+      prepend: "Focused on"
+    },
+    {
+      text: "Creating seamless user experiences",
+      prepend: "Dedicated to"
+    }
+  ],
   profileImage: profileImage,
   contact: {
     email: "nirzaf@gmail.com",

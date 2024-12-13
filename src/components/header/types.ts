@@ -1,6 +1,11 @@
+export interface TaglineData {
+  text: string;
+  prepend: string;
+}
+
 export interface NameTitleProps {
   name: string;
-  title: string;
+  taglines: TaglineData[];
 }
 
 export interface Contact {
@@ -14,7 +19,7 @@ export interface Contact {
 
 export interface HeaderProps {
   name: string;
-  title: string;
+  taglines: TaglineData[];
   contact: Contact;
   profileImage: string;
 }

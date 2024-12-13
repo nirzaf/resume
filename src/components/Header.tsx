@@ -7,7 +7,7 @@ import { ContactSection } from './header/ContactSection';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { DownloadButton } from './header/DownloadButton';
 
-const Header: FC<HeaderProps> = ({ name, title, contact, profileImage }) => {
+const Header: FC<HeaderProps> = ({ name, taglines, contact, profileImage }) => {
   const { elementRef: headerRef, isVisible: isHeaderVisible } = useIntersectionObserver<HTMLDivElement>({
     threshold: 0.1,
   });
@@ -30,45 +30,20 @@ const Header: FC<HeaderProps> = ({ name, title, contact, profileImage }) => {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBoMzB2MzBIMzB6IiBmaWxsPSIjMDYwN0UxIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz48L2c+PC9zdmc+')] opacity-50" />
       </div>
 
-      <GlassCard className="relative overflow-visible">
-        <DownloadButton />
-        <div className="relative z-10">
-          <div className="flex flex-col items-center">
-            {/* Profile Image */}
-            <div className="relative mb-8">
-              <div className="relative rounded-full overflow-hidden shadow-xl">
-                <ProfileImage src={profileImage} />
-              </div>
-            </div>
-
-            {/* Name and Title */}
-            <NameTitle name={name} title={title} />
-
-            {/* Divider with animation */}
-            <div className="w-full max-w-4xl mx-auto px-4 mb-8 overflow-hidden">
-              <div className="relative h-px w-full">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#0607E1]/30 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent animate-shimmer" />
-              </div>
-            </div>
-
-            {/* Contact Information */}
-            <div className="w-full">
-              <ContactSection contact={contact} />
-            </div>
+      <GlassCard>
+        <div className="relative z-10 flex flex-col lg:flex-row items-center gap-8 p-8">
+          <ProfileImage src={profileImage} alt={name} />
+          <div className="flex-1 space-y-6 text-center lg:text-left">
+            <NameTitle name={name} taglines={taglines} />
+            <ContactSection contact={contact} />
           </div>
-        </div>
-
-        {/* Enhanced Background Pattern */}
-        <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/90 to-white/50 dark:from-gray-900/90 dark:to-gray-900/50 backdrop-blur-xl" />
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0607E1]/30 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0607E1]/30 to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(#0607E1_1px,transparent_1px)] [background-size:16px_16px] opacity-[0.03] dark:opacity-[0.07]" />
+          <DownloadButton />
         </div>
       </GlassCard>
     </div>
   );
 };
+
+Header.displayName = 'Header';
 
 export default Header;

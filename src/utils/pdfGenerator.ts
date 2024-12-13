@@ -39,7 +39,7 @@ class PDFGenerator {
 
     // Header
     y = addText(data.header.name, 24, true);
-    y = addText(data.header.title, 16) + 5;
+    y = addText(`${data.header.taglines[0].prepend} ${data.header.taglines[0].text}`, 16) + 5;
 
     // Contact Information
     Object.entries(data.header.contact).forEach(([key, value]) => {

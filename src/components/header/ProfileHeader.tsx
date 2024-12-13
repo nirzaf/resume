@@ -1,13 +1,21 @@
 import React from 'react';
 import { HeaderData } from '../../types/resume';
 import ContactInfo from './ContactInfo';
+import { TypeAnimation } from 'react-type-animation';
 
 interface ProfileHeaderProps {
   header: HeaderData;
 }
 
 const ProfileHeader: React.FC<ProfileHeaderProps> = React.memo(({ header }) => {
-  const { name, title, profileImage, contact } = header;
+  const { name, taglines, profileImage, contact } = header;
+
+  const animationSequence = taglines.reduce<(string | number)[]>((sequence, tagline) => {
+    return [...sequence, 
+      `${tagline.prepend} ${tagline.text}`,
+      3000
+    ];
+  }, []);
 
   return (
     <header className="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 mb-8">
@@ -24,9 +32,17 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = React.memo(({ header }) => {
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
             {name}
           </h1>
-          <h2 className="text-xl md:text-2xl text-blue-600 dark:text-blue-400 mb-4">
-            {title}
-          </h2>
+          <div className="text-xl md:text-2xl mb-4 min-h-[2em] flex items-center justify-center md:justify-start">
+            <span className="text-blue-500 font-medium mr-2">
+              <TypeAnimation
+                sequence={animationSequence}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+                className="inline-block"
+              />
+            </span>
+          </div>
           <ContactInfo contact={contact} />
         </div>
       </div>

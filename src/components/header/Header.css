@@ -1,0 +1,78 @@
+.header {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-info h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.animated-tagline {
+  display: block;
+  min-height: 2em;
+  font-size: 1.5rem;
+  color: #666;
+  margin: 0.5rem 0;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+}
+
+.animated-tagline.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.animated-tagline.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-info div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-info i {
+  width: 20px;
+  color: #666;
+}
+
+.contact-info a {
+  color: #666;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
