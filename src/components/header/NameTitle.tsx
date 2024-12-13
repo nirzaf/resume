@@ -5,24 +5,19 @@ import { useState, useEffect } from 'react';
 
 const animations = [
   {
-    initial: { opacity: 0, y: 20, rotateX: 90 },
-    animate: { opacity: 1, y: 0, rotateX: 0 },
-    exit: { opacity: 0, y: -20, rotateX: -90 }
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -20 }
   },
   {
-    initial: { opacity: 0, x: -50, scale: 0.5 },
-    animate: { opacity: 1, x: 0, scale: 1 },
-    exit: { opacity: 0, x: 50, scale: 0.5 }
+    initial: { opacity: 0, x: -20 },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: 20 }
   },
   {
-    initial: { opacity: 0, scale: 1.5, filter: "blur(10px)" },
-    animate: { opacity: 1, scale: 1, filter: "blur(0px)" },
-    exit: { opacity: 0, scale: 0.5, filter: "blur(10px)" }
-  },
-  {
-    initial: { opacity: 0, rotate: -180, scale: 0 },
-    animate: { opacity: 1, rotate: 0, scale: 1 },
-    exit: { opacity: 0, rotate: 180, scale: 0 }
+    initial: { opacity: 0, scale: 0.95 },
+    animate: { opacity: 1, scale: 1 },
+    exit: { opacity: 0, scale: 0.95 }
   }
 ];
 
@@ -60,7 +55,10 @@ export const NameTitle: FC<NameTitleProps> = ({ name, taglines }) => {
               initial={animations[currentAnimation].initial}
               animate={animations[currentAnimation].animate}
               exit={animations[currentAnimation].exit}
-              transition={{ duration: 0.5 }}
+              transition={{ 
+                duration: 0.4,
+                ease: "easeInOut"
+              }}
               className="flex items-center justify-center"
             >
               <span className="text-lg md:text-xl">
