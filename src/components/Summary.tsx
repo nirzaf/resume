@@ -33,8 +33,8 @@ const Summary: FC<SummaryProps> = ({ professionalOverview, coreExpertise }) => {
             <SectionCard
               title="Professional Overview"
               icon="fa-user-tie"
-              gradientFrom="[#0607E1]/5"
-              gradientTo="blue-100/50"
+              gradientFrom="white"
+              gradientTo="#E6F3FF"
               darkGradientFrom="gray-900"
               darkGradientTo="gray-800"
               borderColor="[#0607E1]/20"
@@ -55,8 +55,8 @@ const Summary: FC<SummaryProps> = ({ professionalOverview, coreExpertise }) => {
             <SectionCard
               title="Core Expertise"
               icon="fa-brain"
-              gradientFrom="[#0607E1]/5"
-              gradientTo="[#0607E1]/10"
+              gradientFrom="white"
+              gradientTo="#E6F3FF"
               darkGradientFrom="gray-900"
               darkGradientTo="gray-800"
               borderColor="[#0607E1]/20"
