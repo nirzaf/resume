@@ -48,7 +48,7 @@ export const NameTitle: FC<NameTitleProps> = ({ name, taglines }) => {
         </div>
         
         {/* Title */}
-        <div className="relative h-8">
+        <div className="relative h-8 mb-4 sm:mb-0">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentTaglineIndex}
@@ -61,7 +61,7 @@ export const NameTitle: FC<NameTitleProps> = ({ name, taglines }) => {
               }}
               className="flex items-center justify-center"
             >
-              <span className="text-lg md:text-xl">
+              <span className="text-base sm:text-lg md:text-xl">
                 <span className="text-blue-500 font-medium mr-1">
                   {taglines[currentTaglineIndex].prepend}
                 </span>

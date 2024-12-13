@@ -27,12 +27,12 @@ export const ContactSection: FC<ContactSectionProps> = ({ contact }) => {
   };
 
   return (
-    <div className="w-full px-2 sm:px-4 py-4 sm:py-6">
+    <div className="w-full px-0 sm:px-4 py-2 sm:py-6">
       <div className="max-w-4xl mx-auto relative">
         {/* Background decoration */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0607E1]/5 via-transparent to-[#0607E1]/5 rounded-2xl opacity-50" />
         
-        <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
+        <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-6">
           {/* Contact Details */}
           <ContactItem
             icon="fa-envelope"
