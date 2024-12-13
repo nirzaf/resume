@@ -60,7 +60,7 @@ export const TechStack: React.FC<TechStackProps> = ({ technologies }) => {
         animate={{
           x: ["0%", "calc(-50%)"],
           transition: {
-            duration: 20,
+            duration: 8,
             repeat: Infinity,
             ease: "linear",
             repeatType: "loop"
