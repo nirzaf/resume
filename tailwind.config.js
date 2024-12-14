@@ -150,11 +150,14 @@ export default {
             opacity: '.15',
           },
         },
-      },
-      boxShadow: {
+        },
+        boxShadow: {
         '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
-      }
-    },
-  },
-  plugins: [],
-}
+        },
+        backgroundImage: {
+        'grid-pattern': 'linear-gradient(to right, #80808012 1px, transparent 1px), linear-gradient(to bottom, #80808012 1px, transparent 1px)',
+        }
+      },
+      },
+      plugins: [],
+    }
