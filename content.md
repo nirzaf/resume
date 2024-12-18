@@ -1,6 +1,4 @@
-I'll convert the content of the HTML file to markdown format.
-
-# Mohamed Farook Mohamed Fazrin - Resume
+# Mohamed Farook Mohamed Fazrin - Senior Software Development Specialist
 
 ## Contact Information
 - Location: Al Sadd, Doha, Qatar
