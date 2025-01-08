@@ -7,6 +7,7 @@ import { CoreCompetencies } from './components/skills/CoreCompetencies';
 import { Experience } from './components/Experience';
 import Education from './components/Education';
 import OtherQualifications from './components/OtherQualifications';
+import FreelanceExpertise from './components/FreelanceExpertise';
 import { resumeData } from './data/resumeData';
 
 const App: React.FC = () => {
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         professionalOverview={resumeData.summary.professionalOverview}
         coreExpertise={resumeData.summary.coreExpertise}
       />
+      <FreelanceExpertise freelanceData={resumeData.freelance} />
       <CoreCompetencies competencies={resumeData.coreCompetencies} />
       <Experience experiences={resumeData.experiences} />
       <Education education={resumeData.education} />
