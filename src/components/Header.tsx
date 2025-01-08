@@ -5,7 +5,6 @@ import { ProfileImage } from './header/ProfileImage';
 import { NameTitle } from './header/NameTitle';
 import { ContactSection } from './header/ContactSection';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import { DownloadButton } from './header/DownloadButton';
 
 const Header: FC<HeaderProps> = ({ name, taglines, contact, profileImage }) => {
   const { elementRef: headerRef, isVisible: isHeaderVisible } = useIntersectionObserver<HTMLDivElement>({
@@ -37,7 +36,6 @@ const Header: FC<HeaderProps> = ({ name, taglines, contact, profileImage }) => {
             <NameTitle name={name} taglines={taglines} />
             <ContactSection contact={contact} />
           </div>
-          <DownloadButton />
         </div>
       </GlassCard>
     </div>
