@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { FreelanceItem } from '../data/freelanceData';
 
 interface FreelanceData {
-  frameworks: string[];
-  cmsTools: string[];
-  keyContributions: string[];
+  frameworks: FreelanceItem[];
+  cmsTools: FreelanceItem[];
+  keyContributions: FreelanceItem[];
   description: string;
 }
 
@@ -86,16 +87,16 @@ const CategoryCard = styled(motion.div)`
 
 const Category = styled.h3`
   color: #0607E1;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-size: 1.3rem;
   font-weight: 600;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 
-  &:before {
-    content: '⚡';
+  i {
     font-size: 1.2rem;
+    opacity: 0.9;
   }
 `;
 
@@ -106,33 +107,42 @@ const List = styled.ul`
 `;
 
 const ListItem = styled(motion.li)`
-  margin: 0.8rem 0;
-  padding-left: 1.5rem;
+  margin: 1rem 0;
+  padding: 0.5rem 0.8rem;
   position: relative;
   color: #333;
   font-size: 1rem;
   line-height: 1.6;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 
-  &:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 6px;
-    background: #0607E1;
-    border-radius: 50%;
+  i {
+    color: #0607E1;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
   }
 
   @media (hover: hover) {
     &:hover {
-      color: #0607E1;
+      background: rgba(6, 7, 225, 0.05);
       transform: translateX(4px);
-      transition: all 0.3s ease;
+      
+      i {
+        transform: scale(1.1);
+      }
     }
   }
 `;
+
+const CategoryIcon = {
+  frameworks: "fa-solid fa-code",
+  cmsTools: "fa-solid fa-cubes",
+  keyContributions: "fa-solid fa-star"
+};
 
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -168,6 +178,7 @@ const FreelanceExpertise: React.FC<FreelanceExpertiseProps> = ({ freelanceData }
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
+        <i className="fa-solid fa-laptop-code" style={{ marginRight: '0.5rem' }}></i>
         Freelance Expertise
       </Title>
       
@@ -181,51 +192,63 @@ const FreelanceExpertise: React.FC<FreelanceExpertiseProps> = ({ freelanceData }
 
       <Grid>
         <CategoryCard variants={itemVariants}>
-          <Category>Frameworks</Category>
+          <Category>
+            <i className={CategoryIcon.frameworks}></i>
+            Frameworks
+          </Category>
           <List>
             {freelanceData.frameworks.map((framework) => (
               <ListItem
-                key={framework}
+                key={framework.name}
                 variants={itemVariants}
                 whileHover={{ x: 8 }}
                 role="listitem"
-                aria-label={framework}
+                aria-label={framework.name}
               >
-                {framework}
+                <i className={framework.icon}></i>
+                {framework.name}
               </ListItem>
             ))}
           </List>
         </CategoryCard>
 
         <CategoryCard variants={itemVariants}>
-          <Category>CMS Tools</Category>
+          <Category>
+            <i className={CategoryIcon.cmsTools}></i>
+            CMS Tools
+          </Category>
           <List>
             {freelanceData.cmsTools.map((tool) => (
               <ListItem
-                key={tool}
+                key={tool.name}
                 variants={itemVariants}
                 whileHover={{ x: 8 }}
                 role="listitem"
-                aria-label={tool}
+                aria-label={tool.name}
               >
-                {tool}
+                <i className={tool.icon}></i>
+                {tool.name}
               </ListItem>
             ))}
           </List>
         </CategoryCard>
 
         <CategoryCard variants={itemVariants}>
-          <Category>Key Contributions</Category>
+          <Category>
+            <i className={CategoryIcon.keyContributions}></i>
+            Key Contributions
+          </Category>
           <List>
             {freelanceData.keyContributions.map((contribution) => (
               <ListItem
-                key={contribution}
+                key={contribution.name}
                 variants={itemVariants}
                 whileHover={{ x: 8 }}
                 role="listitem"
-                aria-label={contribution}
+                aria-label={contribution.name}
               >
-                {contribution}
+                <i className={contribution.icon}></i>
+                {contribution.name}
               </ListItem>
             ))}
           </List>
