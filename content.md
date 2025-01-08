@@ -16,6 +16,37 @@ With over a decade of experience in software engineering, I have a proven track 
 
 I am seeking a challenging role where I can leverage my expertise and passion for innovation to contribute to the development of impactful software.
 
+### Freelance Experience
+
+Successfully delivered numerous freelance projects using WordPress, Magento (Adobe Commerce), and PrestaShop. Proficient in leveraging open-source PHP frameworks and CMS tools.
+
+#### Frameworks & Technologies
+- Laravel
+- CodeIgniter
+- Symfony
+- CakePHP
+- Angular
+- React
+- Vue
+
+#### CMS & E-commerce Platforms
+- WordPress
+- Magento (Adobe Commerce)
+- PrestaShop
+- Drupal
+- Joomla
+- WooCommerce
+- Shopify
+
+#### Key Contributions
+- Custom Theme development
+- E-commerce integration
+- Performance tuning
+- SEO optimization
+- API integrations
+- Maintenance and support
+- Security audits
+
 ## Top Skills
 - C#/.NET Core
 - ASP.NET Core
