@@ -1,14 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { FreelanceItem } from '../data/freelanceData';
-
-interface FreelanceData {
-  frameworks: FreelanceItem[];
-  cmsTools: FreelanceItem[];
-  keyContributions: FreelanceItem[];
-  description: string;
-}
+import { FreelanceData } from '../types/resume';
 
 interface FreelanceExpertiseProps {
   freelanceData: FreelanceData;

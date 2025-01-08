@@ -78,10 +78,18 @@ export interface Qualification {
   score?: string;
 }
 
+export interface FreelanceData {
+  description: string;
+  frameworks: Technology[];
+  cmsTools: Technology[];
+  keyContributions: Technology[];
+}
+
 export interface ResumeData {
   header: HeaderData;
   summary: SummaryData;
   coreCompetencies: Competency[];
+  freelance: FreelanceData;
   experiences: Experience[];
   education: Education[];
   qualifications: Qualification[];
