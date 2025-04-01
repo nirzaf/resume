@@ -37,10 +37,10 @@ export const coreCompetencies = [
     keywords: ["SQL Server", "MongoDB", "Redis", "PostgreSQL", "Database Design"]
   },
   {
-    name: "DevOps & Infrastructure",
-    description: "Strong background in DevOps practices, implementing CI/CD pipelines, and managing cloud infrastructure.",
-    icon: "fas fa-server",
-    keywords: ["Azure DevOps", "GitHub Actions", "Terraform", "Docker", "Kubernetes"]
+    name: "AI Tools & Agents",
+    description: "Expert in leveraging and developing AI-powered tools and autonomous agents for enhancing software development and business solutions.",
+    icon: "fas fa-robot",
+    keywords: ["LLM Integration", "Prompt Engineering", "AI Workflows", "Generative AI", "Autonomous Agents"]
   },
   {
     name: "Software Architecture",

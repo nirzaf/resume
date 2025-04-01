@@ -2,6 +2,18 @@ import { Qualification } from '../../types/resume';
 
 export const qualificationsData: Qualification[] = [
   {
+    title: "Microsoft Azure AI Fundamentals (AI-900)",
+    issuer: "Microsoft",
+    date: "2024",
+    description: "Certified in AI fundamentals on Microsoft Azure, covering machine learning, computer vision, natural language processing, and responsible AI principles."
+  },
+  {
+    title: "Google AI Prompt Engineering Professional Certificate",
+    issuer: "Google Cloud",
+    date: "2024",
+    description: "Advanced certification in designing effective prompts for large language models (LLMs), optimizing AI interactions, and creating AI-powered solutions."
+  },
+  {
     title: "International English Language Testing System (IELTS) (Academic)",
     issuer: "British Council",
     date: "2021",

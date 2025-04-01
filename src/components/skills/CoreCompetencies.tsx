@@ -18,7 +18,7 @@ export const CoreCompetencies: React.FC<CoreCompetenciesProps> = ({ competencies
       'C# & .NET Core': 'fas fa-code',
       'Cloud Architecture': 'fas fa-cloud',
       'Database Engineering': 'fas fa-database',
-      'DevOps & Infrastructure': 'fas fa-server',
+      'AI Tools & Agents': 'fas fa-robot',
       'Software Architecture': 'fas fa-layer-group'
     };
     return iconMap[name] || 'fas fa-code';
