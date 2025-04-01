@@ -11,8 +11,8 @@ const StardevBadge: React.FC = () => {
       
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between relative z-10">
         <div className="flex flex-col sm:flex-row items-center mb-2 sm:mb-0">
-          <span className="text-[#0607E1] font-bold mr-2 text-lg">🏆 #1 Dev in 🇶🇦</span>
-          <span className="text-gray-700 dark:text-gray-300 text-sm">by stardev.io</span>
+          <span className="text-[#0607E1] font-bold mr-2 text-lg">🏆 #1 Rated in 🇶🇦</span>
+          <span className="text-gray-700 dark:text-gray-300 text-sm">by ⭐ Dev</span>
         </div>
         
         <div className="flex items-center">
