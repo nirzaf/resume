@@ -85,11 +85,20 @@ export interface FreelanceData {
   keyContributions: Technology[];
 }
 
+export interface AIDomainData {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  color: string;
+}
+
 export interface ResumeData {
   header: HeaderData;
   summary: SummaryData;
   coreCompetencies: Competency[];
   freelance: FreelanceData;
+  aiDomains: AIDomainData[];
   experiences: Experience[];
   education: Education[];
   qualifications: Qualification[];

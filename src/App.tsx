@@ -8,6 +8,7 @@ import { Experience } from './components/Experience';
 import Education from './components/Education';
 import OtherQualifications from './components/OtherQualifications';
 import FreelanceExpertise from './components/FreelanceExpertise';
+import AIDomains from './components/AIDomains';
 import { resumeData } from './data/resumeData';
 
 const App: React.FC = () => {
@@ -18,6 +19,7 @@ const App: React.FC = () => {
         professionalOverview={resumeData.summary.professionalOverview}
         coreExpertise={resumeData.summary.coreExpertise}
       />
+      <AIDomains domains={resumeData.aiDomains} />
       <FreelanceExpertise freelanceData={resumeData.freelance} />
       <CoreCompetencies competencies={resumeData.coreCompetencies} />
       <Experience experiences={resumeData.experiences} />
