@@ -1,38 +1,19 @@
-import getIconUrl from 'tech-stack-icons';
-
 export interface Technology {
   name: string;
   icon: string;
 }
 
-// Helper function to create a technology object with fallback icon handling
+// Helper function to create a technology object with icon handling
 export const createTech = (name: string): Technology => {
-  const normalizedName = name.toLowerCase()
-    .replace(/[^a-z0-9]/g, '')
-    .replace('dotnet', 'dot-net')
-    .replace('nodejs', 'node-js')
-    .replace('nextjs', 'next-js')
-    .replace('reactjs', 'react')
-    .replace('vuejs', 'vue')
-    .replace('aspnet', 'dot-net');
-
-  // Try to get icon from tech-stack-icons
-  let icon: string;
-  try {
-    const techStackIcon = getIconUrl({ name: normalizedName });
-    icon = typeof techStackIcon === 'string' ? techStackIcon : '';
-  } catch {
-    icon = '';
-  }
-
-  // Fallback to devicons if tech-stack-icons doesn't have the icon
-  if (!icon) {
-    icon = `https://raw.githubusercontent.com/devicons/devicon/master/icons/${normalizedName}/${normalizedName}-original.svg`;
-  }
-
+  // We're now using devicon CSS classes in the component,
+  // so we don't need to provide actual image URLs here.
+  // The TechStack component will handle the icon display based on the technology name.
+  
+  // Just return the name, and the icon field can be empty
+  // since we'll use the name to look up the appropriate devicon class
   return {
     name,
-    icon
+    icon: ''
   };
 };
 
