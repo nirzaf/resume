@@ -16,7 +16,7 @@ export const summaryData: SummaryData = {
       "Advanced Full Stack Development: Expertise in React ecosystem with TypeScript, Next.js, and modern state management. Proficient in .NET Core, C#, and enterprise application architecture.",
       "Cloud & DevOps Excellence: Deep experience with Azure cloud services, microservices architecture, and containerization. Expert in implementing robust CI/CD pipelines and infrastructure as code.",
       "Performance & Security: Specialized in application performance optimization, security best practices, and building resilient systems. Strong focus on monitoring, logging, and observability.",
-      "Technical Leadership: Proven track record in leading development teams, mentoring developers, and driving technical initiatives. Expert in Agile methodologies and modern practices."
+      "AI Tools & Agents: Expert in leveraging and developing AI-powered tools and autonomous agents for software development and business solutions. Proficient in prompt engineering, LLM integration, and creating intelligent workflows that enhance productivity and automate complex tasks."
     ]
   }
 };
