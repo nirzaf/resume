@@ -9,6 +9,10 @@ export const headerData: HeaderData = {
       prepend: "I am a"
     },
     {
+      text: "Leveraging AI to solve complex problems",
+      prepend: "Specialized in"
+    },
+    {
       text: "Crafting spin digital experiences with code",
       prepend: "I enjoy"
     },
@@ -23,10 +27,6 @@ export const headerData: HeaderData = {
     {
       text: "Creating seamless user experiences",
       prepend: "Dedicated to"
-    },
-    {
-      text: "Leveraging AI to solve complex problems",
-      prepend: "Specialized in"
     },
     {
       text: "Building intelligent systems with LLMs",
