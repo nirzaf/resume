@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const StardevBadge: React.FC = () => {
+  // Add state to track scroll position for enhanced effects
+  const [scrolled, setScrolled] = useState(false);
+  
+  // Listen for scroll events to add visual effects when scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [scrolled]);
+  
   return (
-    <div className="w-full bg-gradient-to-r from-[#0607E1]/10 via-[#0607E1]/20 to-[#0607E1]/10 py-2 px-4 shadow-lg relative overflow-hidden fixed top-0 left-0 right-0 z-50">
+    <div 
+      className={`fixed top-0 left-0 right-0 w-full bg-gradient-to-r from-[#0607E1]/10 via-[#0607E1]/20 to-[#0607E1]/10 py-2 px-4 overflow-hidden z-50 transition-all duration-300 ${scrolled ? 'shadow-md backdrop-blur-sm' : 'shadow-lg'}`}
+      style={{ boxShadow: scrolled ? '0 4px 20px rgba(0, 0, 0, 0.1)' : '0 2px 10px rgba(0, 0, 0, 0.05)' }}
+    >
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 animate-pulse"></div>
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
@@ -17,7 +36,7 @@ const StardevBadge: React.FC = () => {
         
         <div className="flex items-center justify-center w-full sm:w-auto">
           <a 
-            href="https://stardev.io/developers/nirzaf" 
+            href="https://stardev.io/top/developers/all/in/qatar/doha" 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center sm:hover:scale-105 transition-all duration-300"

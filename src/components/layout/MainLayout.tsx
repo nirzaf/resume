@@ -13,8 +13,8 @@ const MainLayout: React.FC<MainLayoutProps> = React.memo(({ children }) => {
       {/* StardevBadge is now fixed position directly in its component */}
       <StardevBadge />
       
-      {/* Added pt-16 to account for the fixed header height */}
-      <div className="relative w-full max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 py-6 sm:py-8 lg:py-12 pt-16">
+      {/* Added mt-16 to account for the fixed header height */}
+      <div className="relative w-full max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 py-6 sm:py-8 lg:py-12 mt-16">
         <div className="backdrop-blur-sm bg-white/50 dark:bg-gray-900/50 rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl p-4 sm:p-6 lg:p-8 transition-all duration-300 ease-in-out hover:shadow-2xl">
           <div className="w-full">
             {children}
