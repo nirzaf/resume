@@ -23,6 +23,14 @@ export const headerData: HeaderData = {
     {
       text: "Creating seamless user experiences",
       prepend: "Dedicated to"
+    },
+    {
+      text: "Leveraging AI to solve complex problems",
+      prepend: "Specialized in"
+    },
+    {
+      text: "Building intelligent systems with LLMs",
+      prepend: "Expert at"
     }
   ],
   profileImage: profileImage,
