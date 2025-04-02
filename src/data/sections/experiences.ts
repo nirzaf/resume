@@ -13,7 +13,7 @@ export const experienceData: Experience[] = [
       "Developed comprehensive curriculum for multiple IT courses",
       "Mentored over 100 University Students in Industrial ",
       "Offering practical development skills for the production grade applications",
-      "Maintained high student satisfaction ratings"
+      "Maintained high student satisfaction ratings - ⭐⭐⭐⭐⭐"
     ],
     technologies: [],
     logo: "https://ik.imagekit.io/studytomy/minimal%20primary%20logo.png?updatedAt=1732379735748"
