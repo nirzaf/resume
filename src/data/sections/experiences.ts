@@ -3,6 +3,22 @@ import { createTech } from '../technologies';
 
 export const experienceData: Experience[] = [
   {
+    company: "Studytomy",
+    position: "IT Instructor",
+    location: "Remote",
+    startDate: "January 2020",
+    endDate: "Present",
+    description: "Teaching IT subjects and mentoring interns in various technology domains.",
+    achievements: [
+      "Developed comprehensive curriculum for multiple IT courses",
+      "Mentored over 100 University Students in Industrial ",
+      "Offering practical development skills for the production grade applications",
+      "Maintained high student satisfaction ratings"
+    ],
+    technologies: [],
+    logo: "https://ik.imagekit.io/studytomy/minimal%20primary%20logo.png?updatedAt=1732379735748"
+  },
+  {
     company: "Primary Health Care Corporation",
     position: "Software Development Specialist",
     location: "Qatar",
